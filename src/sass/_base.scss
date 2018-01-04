@@ -51,3 +51,16 @@ section {
 .icon {
   display: inline-block;
 }
+
+.flex-container{
+  display: flex;
+
+  &--column{
+    flex-direction: column;
+  }
+
+  &--align-center{
+    justify-content: center;
+    align-items: center;
+  }
+}

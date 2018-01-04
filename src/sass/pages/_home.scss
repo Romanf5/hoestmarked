@@ -3,7 +3,16 @@
   padding: 30px;
 
   &__banner{
+    position: relative;
     height: 100%;
     background: url('/images/hero-banner-home.png') no-repeat center/cover;
   }
+}
+
+.time-line{
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  bottom: 70px;
+  left: 73px;
 }
