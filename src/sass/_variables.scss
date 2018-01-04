@@ -1,26 +1,27 @@
-//  Цвет
+//  Color
+$main-color: #fff;
 
 $body-bg: #fff;
 $text-color: #333;
 
-// Цвет ссылки
+// Link сolor
+$link-color: $main-color;
+$link-color--hover: $main-color;
 
-$link-color: #55b3f3;
-$link-color--hover: darken($link-color, 20%);
+// Typography
+$base-font: 'NewsGoth BT Roman', sans-serif;
+$bold-font: 'News Gothic Condensed Bold', sans-serif;
+$title-font: 'Archer Book', serif;
 
-//  Типографика
 
-$font-family: 'Roboto', Helvetica, Arial, sans-serif;
-// $font-family--helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$font-size: 14px;
+$font-size: 16px;
 $font-weight: 400; // Regular
-$line-height: 1.2;
+$line-height: 20px;
 
-// Ширина контейнера
+/*// Ширина контейнера
 
 $container-padding: 15px;
-$container-width: 1170px + $container-padding * 2;
+$container-width: 1170px + $container-padding * 2;*/
 
 //  Адаптивность и соответствующие ширины контейнера
 

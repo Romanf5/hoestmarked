@@ -1,8 +1,8 @@
-//  Базовые стили
+// Base style
 
 html {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 *,
@@ -12,12 +12,12 @@ html {
 }
 
 body {
-	background-color: $body-bg;
+  background-color: $body-bg;
   color: $text-color;
-	font-family: $font-family;
+  font-family: $base-font;
   font-weight: $font-weight;
-	font-size: $font-size;
-	line-height: $line-height;
+  font-size: $font-size;
+  line-height: $line-height;
 }
 
 a {
@@ -40,13 +40,13 @@ section {
   position: relative;
 }
 
-.page-container {
+/*.page-container {
   max-width: $container-width;
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-padding;
   padding-right: $container-padding;
-}
+}*/
 
 .icon {
   display: inline-block;
