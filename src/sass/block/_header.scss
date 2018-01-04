@@ -1,3 +1,33 @@
 .page-header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-btn-wrap,
+.map-btn-wrp{
+  background: $main-color;
+  width: 91px;
+  height: 91px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-menu{
+  width: 22px;
+  height: 2px;
+  display: inline-block;
+  background-color: $icon-menu;
+  margin-bottom: 5px;
+
+  &:last-of-type{
+    margin-bottom: 0;
+  }
 }
