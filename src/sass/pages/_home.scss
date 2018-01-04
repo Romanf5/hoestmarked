@@ -1,6 +1,7 @@
 .hero{
   height: 100vh;
   padding: 30px;
+  margin-bottom: 30px;
 
   &__banner{
     position: relative;
@@ -16,3 +17,59 @@
   bottom: 70px;
   left: 73px;
 }
+
+.info-section{
+  overflow: hidden;
+  padding-bottom: 35px;
+
+  //No delete (rules for animation)
+  /*&__img{
+    transform: scale(0.9);
+    transition: 1.2s;
+  }*/
+
+  &__container{
+    position: relative;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: -58px;
+
+  }
+
+  &__text{
+    position: absolute;
+    max-width: 802px;
+    top: -10px;
+    left: -505px;
+  }
+
+  .section-title{
+    color: $info-section-title-color;
+    font-size: $title-font-size;
+    line-height: $title-line-height;
+    font-weight: $regular-font-weght;
+    margin-bottom: 33px;
+  }
+
+  .date{
+    font-family: $bold-font;
+    font-weight: $bold-font-w;
+    font-size: 27px;
+    color: $info-section-title-color;
+    margin-bottom: 30px;
+  }
+
+  .description-text{
+    max-width: 600px;
+    color: $info-small-text-color;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 25px;
+  }
+}
+
+.text-indent{
+  display: block;
+  transform: translateX(-50px);
+}
+

@@ -7,8 +7,13 @@
   outline: 0 none;
   border: 0 none;
   border-radius: 0;
-  padding: 8px 25px;
-  background-color: #000;
-  text-transform: uppercase;
-  color: #fff;
+  padding: 25px 33px;
+  background-color: $info-section-title-color;
+  font-size: 23px;
+  font-family: $bold-font;
+  font-weight: 400;
+
+  &--section-info{
+    transform: translateX(-25px);
+  }
 }
