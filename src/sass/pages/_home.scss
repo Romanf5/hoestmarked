@@ -66,12 +66,36 @@
 }
 
 .find-section{
-  padding-top: 35px;
-  overflow: hidden;
+  padding-top: 234px;
 
   &__container{
     max-width: 1870px;
     margin-right: auto;
+  }
+
+  &__img{
+    position: relative;
+
+    .img-description{
+      position: absolute;
+      top: -189px;
+      right: -177px;
+      max-width: 620px;
+      width: 100%;
+      padding-top: 90px;
+      padding-bottom: 80px;
+      font-family: $title-font;
+      color: $main-color;
+      font-size: 34px;
+      line-height: 40.14px;
+      background-color: $img-description;
+
+      p{
+        margin: 0 auto;
+        max-width: 435px;
+
+      }
+    }
   }
 
   &__text{
