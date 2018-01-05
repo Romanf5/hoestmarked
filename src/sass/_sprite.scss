@@ -22,11 +22,23 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 26px;
   height: 20px;
 }
+.icon-clock {
+  background-image: url(../images/spritesheet.png);
+  background-position: -94px -24px;
+  width: 18px;
+  height: 18px;
+}
 .icon-close {
   background-image: url(../images/spritesheet.png);
   background-position: -63px -40px;
   width: 20px;
   height: 20px;
+}
+.icon-date {
+  background-image: url(../images/spritesheet.png);
+  background-position: -94px -60px;
+  width: 16px;
+  height: 16px;
 }
 .icon-down-arrow {
   background-image: url(../images/spritesheet.png);
@@ -39,6 +51,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: 0px -40px;
   width: 33px;
   height: 41px;
+}
+.icon-mark {
+  background-image: url(../images/spritesheet.png);
+  background-position: -94px 0px;
+  width: 19px;
+  height: 22px;
+}
+.icon-people {
+  background-image: url(../images/spritesheet.png);
+  background-position: -94px -44px;
+  width: 19px;
+  height: 14px;
 }
 .icon-time-line {
   background-image: url(../images/spritesheet.png);
