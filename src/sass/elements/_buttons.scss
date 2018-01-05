@@ -16,4 +16,15 @@
   &--section-info{
     transform: translateX(-25px);
   }
+
+  &--find-section{
+    background-color: $find-section-color;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.btn-scroll-down{
+  display: inline-block;
+  margin-top: 61px;
 }

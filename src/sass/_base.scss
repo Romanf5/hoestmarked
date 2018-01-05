@@ -53,8 +53,33 @@ section {
   display: inline-block;
 }
 
+.section-title{
+  margin-top: 0;
+  font-size: $title-font-size;
+  line-height: $title-line-height;
+  font-weight: $regular-font-weght;
+}
+
+.section-sub-title{
+  margin-top: 0;
+  margin-bottom: 17px;
+  font-family: $bold-font;
+  font-size: $sub-title-font-size;
+  font-weight: $bold-font-w;
+  line-height: $sub-title-font-line-height;
+}
+
+.description-text{
+  font-size: 14px;
+  line-height: 22px;
+}
+
 .flex-container{
   display: flex;
+
+  &--jastify-between{
+    justify-content: space-between;
+  }
 
   &--column{
     flex-direction: column;
@@ -64,4 +89,9 @@ section {
     justify-content: center;
     align-items: center;
   }
+
+  &--align-start{
+    align-items: start;
+  }
+
 }
