@@ -67,6 +67,7 @@
 
 .find-section{
   padding-top: 234px;
+  padding-bottom: 65px;
 
   &__container{
     max-width: 1870px;
@@ -130,6 +131,53 @@
 
   .description-text{
     margin-bottom: 25px;
+  }
+}
+
+.slider-section{
+  padding-top: 65px;
+  padding-bottom: 150px;
+
+  &__container{
+    position: relative;
+    max-width: 1738px;
+    margin-left: auto;
+  }
+
+  .slider-container{
+    max-width: 1672px;
+    margin-left: auto;
+  }
+
+  .sub-content-slider{
+    position: relative;
+    padding-top: 100px;
+  }
+
+  &__text{
+    max-width: 635px;
+    color: $slider-section-text;
+  }
+
+  .section-title{
+    color: $slider-section-title;
+    margin-bottom: 44px;
+  }
+
+  .text-indent-slider{
+    display: block;
+    padding-left: 127px;
+  }
+
+  .description-text{
+    margin-bottom: 30px;
+  }
+
+  .boy-img-wrp{
+    position: absolute;
+    right: 160px;
+    top:-226px;
+    max-width: 778px;
   }
 }
 
