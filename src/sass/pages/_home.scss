@@ -181,6 +181,56 @@
   }
 }
 
+.ecology-section{
+  padding-top: 150px;
+  padding-bottom: 222px;
+
+  &__container{
+    position: relative;
+    max-width: 1860px;
+    margin-right: auto;
+  }
+
+  &__img{
+    max-width: 1144px;
+  }
+
+  &__text{
+    position: absolute;
+    top:338px;
+    right: 110px;
+    max-width: 993px;
+    width: 100%;
+    color: $main-color;
+    padding: 120px 0;
+    background-color: $ecology-section-color;
+
+    .text-content{
+      max-width: 735px;
+      margin: 0 auto;
+    }
+  }
+
+  .section-title{
+    margin-bottom: 50px;
+  }
+  .ecology-text-indent{
+    display: block;
+
+    &--sm{
+      padding-left:60px;
+    }
+
+    &--md{
+      padding-left: 95px;
+    }
+  }
+
+  .description-text{
+    margin-bottom: 25px;
+  }
+}
+
 .text-indent{
   display: block;
   transform: translateX(-50px);
