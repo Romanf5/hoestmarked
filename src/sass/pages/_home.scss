@@ -298,6 +298,37 @@
   }
 }
 
+.contact-section {
+  padding-top: 291px;
+
+  &__container{
+    max-width: 1758px;
+    margin-left: auto;
+  }
+
+  &__text{
+    max-width: 432px;
+    margin-bottom: 35px;
+  }
+
+  &__img{
+    max-width: 1198px;
+  }
+
+  .section-title{
+    color: $contact-color;
+  }
+
+  .description-content{
+    padding-left: 20px;
+  }
+
+  .section-sub-title{
+    color: $contact-color;
+    font-size: 27px;
+  }
+}
+
 .text-indent{
   display: block;
   transform: translateX(-50px);
@@ -340,3 +371,25 @@
   }
 }
 
+.contact-item{
+  margin-bottom: 20px;
+
+  &__country,
+  &__tel{
+    display: block;
+    color: $contact-color;
+
+    &:hover{
+      color: $contact-color;
+    }
+  }
+
+  &__email{
+    display: block;
+    color: $email-color
+  }
+
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+}
