@@ -6,7 +6,9 @@
   "assets": {
     "addJs": [
       "./node_modules/jquery/dist/jquery.min.js",
-      "./node_modules/popper.js/dist/umd/popper.min.js"
+      "./node_modules/popper.js/dist/umd/popper.min.js",
+      "./node_modules/velocity-animate/velocity.min.js",
+      "./node_modules/velocity-animate/velocity.ui.min.js"
     ],
     "addCss": [
     ]
