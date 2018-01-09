@@ -3,7 +3,7 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 901;
   display: flex;
   justify-content: space-between;
 }
@@ -42,6 +42,8 @@
   transform: scale(0);
   transform-origin: left top;
   transition: transform 0.5s;
+  outline: 0 none;
+  border: 0 none;
 }
 
 .map-btn-wrp {
@@ -54,6 +56,8 @@
   display: inline-block;
   background-color: $icon-menu;
   margin-bottom: 5px;
+  transition: transform 0.3s;
+
   &:last-of-type {
     margin-bottom: 0;
   }
