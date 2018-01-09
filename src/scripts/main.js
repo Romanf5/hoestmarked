@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
     headerLineText: $('#scroll-line-text'),
@@ -63,13 +63,66 @@ $(document).ready(function() {
     menuBtn: $('.menu-btn-wrap'),
     mapBtn: $('.map-btn-wrp'),
     scaleLoad: function () {
-      $(this.menuBtn).velocity({scale: 1}, {easing:'easeIn', delay: 800});
-      $.Velocity.animate($(this.mapBtn),{scale: 1}, {easing:'easeIn', delay: 800}).then(function () {
+      $(this.menuBtn).velocity({scale: 1}, {easing: 'easeIn', delay: 500});
+      $.Velocity.animate($(this.mapBtn), {scale: 1}, {easing: 'easeIn', delay: 500}).then(function () {
         headerLineAnimation.scroll(headerLineAnimation.headerLine);
       })
     }
   };
 
+  var heroSection = {
+    logo: $('.logo'),
+    banner: $('.js-animation-banner'),
+    downArrow: $('.btn-scroll-down'),
+    body: $('body'),
+    bannerShow: function () {
+      var self = this;
+      $.Velocity.animate(this.banner,
+        {
+          opacity: 1
+        }, {
+          easing: 'linear',
+          delay: 600,
+          duration: 800,
+          progress: function (start) {
+            if (start) {
+              self.body.addClass('blocked');
+            }
+          }
+        }).then(function (elements) {
+        if (elements) {
+          headerBtn.scaleLoad();
+          heroSection.showLogo();
+          heroSection.showArrow();
+        }
+      });
+    },
+    showLogo: function () {
+      var self = this;
+      $.Velocity.animate(this.logo, {
+        opacity: 1,
+      }, {
+        easing: 'easeIn',
+        delay: 500
+      }).then(function () {
+        self.body.removeClass('blocked')
+      })
+    },
+    showArrow: function () {
+      var self = this;
+      this.downArrow.velocity({
+        opacity: 1,
+      }, {
+        easing: 'easeIn',
+        delay: 500
+      })
+    }
+  };
 
-  headerBtn.scaleLoad();
+  var menu = {
+    menuBtn: $('.menu-btn-wrap'),
+  };
+
+
+  heroSection.bannerShow();
 });
