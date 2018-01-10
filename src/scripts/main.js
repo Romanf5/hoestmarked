@@ -72,11 +72,18 @@ $(document).ready(function () {
 
   var headerBtn = {
     menuBtn: $('.menu-btn-wrap'),
+    menui:$('.icon-menu'),
+    mapi: $('.icon-map-icon'),
     mapBtn: $('.map-btn-wrp'),
+    showIcon: function(){
+      $(this.menui).velocity({opacity:1},{easing: 'easeIn', delay: 300});
+      $(this.mapi).velocity({opacity:1},{easing: 'easeIn', delay: 300});
+    },
     scaleLoad: function () {
       $(this.menuBtn).velocity({scale: 1}, {easing: 'easeIn', delay: 2000});
       $.Velocity.animate($(this.mapBtn), {scale: 1}, {easing: 'easeIn', delay: 2000}).then(function () {
         headerLineAnimation.scroll(headerLineAnimation.headerLine);
+        headerBtn.showIcon();
       })
     }
   };
@@ -312,10 +319,38 @@ $(document).ready(function () {
     }
   };
 
+  var controller = new ScrollMagic.Controller();
+
+  var tweenInfoImg = TweenMax.to("#info-img", 2, {
+    scale: 1,
+    y:0
+  });
+
+  var tweenInfoText = TweenMax.to("#info-text",3,{
+    y:0,
+  });
+
+  var scene1 = new ScrollMagic.Scene({
+    triggerElement: "#trigger",
+    duration: 900,
+    offset: -350
+  }).setTween(tweenInfoImg)
+    .addIndicators()
+    .addTo(controller);
+
+  var s2 =  new ScrollMagic.Scene({
+    triggerElement: "#trigger",
+    duration: 1250,
+    offset: -350
+  }).setTween(tweenInfoText)
+    .addIndicators()
+    .addTo(controller);
+
   heroSection.bannerShow();
   headerBtn.scaleLoad();
 
   menu.init();
 
 });
+
 

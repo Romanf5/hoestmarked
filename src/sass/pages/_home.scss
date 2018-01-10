@@ -28,16 +28,15 @@
   padding-bottom: 35px;
 
   //No delete (rules for animation)
-  /*&__img{
-    transform: scale(0.9);
-    transition: 1.2s;
-  }*/
+  &__img{
+    transform: scale(0.7) translateY(300px);
+  }
 
   &__container{
     position: relative;
     max-width: 1170px;
     margin-left: auto;
-    margin-right: -58px;
+    margin-right: -180px;
 
   }
 
@@ -46,6 +45,7 @@
     max-width: 802px;
     top: 65px;
     left: -505px;
+    transform: translateY(500px);
   }
 
   .section-title{

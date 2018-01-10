@@ -50,6 +50,10 @@
   transform-origin: right top;
 }
 
+.icon-map-icon{
+  opacity: 0;
+}
+
 .icon-menu {
   width: 22px;
   height: 2px;
@@ -57,6 +61,7 @@
   background-color: $icon-menu;
   margin-bottom: 5px;
   transition: transform 0.3s;
+  opacity: 0;
 
   &:last-of-type {
     margin-bottom: 0;
