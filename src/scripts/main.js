@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var body = $('body');
 
-  jQuery.scrollSpeed(80, 2000);
+  $.scrollSpeed(80, 2000);
 
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
@@ -55,14 +55,16 @@ $(document).ready(function () {
     },
     scroll: function (element) {
       $(window).on('scroll', function () {
-        if ($(window).scrollTop() > 0) {
-          if (headerLineAnimation.marker) {
-            headerLineAnimation.lineShow(element);
-            headerLineAnimation.marker = false;
+        if (!menu.menuBtn.hasClass('icon-close')) {
+          if ($(window).scrollTop() > 0) {
+            if (headerLineAnimation.marker) {
+              headerLineAnimation.lineShow(element);
+              headerLineAnimation.marker = false;
+            }
+          } else if ($(window).scrollTop() === 0) {
+            headerLineAnimation.marker = true;
+            headerLineAnimation.textHidden();
           }
-        } else if ($(window).scrollTop() === 0) {
-          headerLineAnimation.marker = true;
-          headerLineAnimation.textHidden();
         }
       })
     }
@@ -226,7 +228,7 @@ $(document).ready(function () {
     hiddenMenuLogo: function () {
       this.menuBtn.prop('disabled', true);
       $.Velocity.animate(this.menuLogo, {
-        opacity: 0 ,
+        opacity: 0,
       }, {
         easing: 'linear',
         delay: 150,
@@ -314,5 +316,6 @@ $(document).ready(function () {
   headerBtn.scaleLoad();
 
   menu.init();
+
 });
 
