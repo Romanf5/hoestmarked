@@ -95,6 +95,8 @@
       font-size: 34px;
       line-height: 40.14px;
       background-color: $img-description;
+      transform: translateY(250px);
+
 
       p{
         margin: 0 auto;
@@ -102,6 +104,10 @@
 
       }
     }
+  }
+
+  &__img-wrp{
+    transform: scale(0.8);
   }
 
   &__text{
@@ -112,6 +118,7 @@
     background-image: url('../images/map-bg.png');
     background-repeat: no-repeat;
     background-position-x: 192px;
+    opacity: 0;
   }
 
   .section-title{
