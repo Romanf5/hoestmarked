@@ -1,6 +1,8 @@
 $(document).ready(function () {
   var body = $('body');
 
+  jQuery.scrollSpeed(80, 2000);
+
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
     headerLineText: $('#scroll-line-text'),
@@ -224,7 +226,7 @@ $(document).ready(function () {
     hiddenMenuLogo: function () {
       this.menuBtn.prop('disabled', true);
       $.Velocity.animate(this.menuLogo, {
-        opacity: 0,
+        opacity: 0 ,
       }, {
         easing: 'linear',
         delay: 150,
@@ -289,7 +291,6 @@ $(document).ready(function () {
       this.hiddenMenuLogo();
     },
 
-
     clickBtn: function () {
       if ($(this).hasClass('icon-close')) {
         $(this).removeClass('icon-close');
@@ -314,3 +315,4 @@ $(document).ready(function () {
 
   menu.init();
 });
+
