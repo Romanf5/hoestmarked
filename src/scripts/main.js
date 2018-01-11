@@ -1,7 +1,27 @@
 $(document).ready(function () {
   var body = $('body');
+  /*Scroll */
+  var $window = $(window);
+  var scrollTime = 0.7;
+  var scrollDistance = 200;
 
-  $.scrollSpeed(80, 2000);
+  $window.on("mousewheel DOMMouseScroll", function(event){
+
+    event.preventDefault();
+
+    var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+    var scrollTop = $window.scrollTop();
+    var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+    TweenMax.to($window, scrollTime, {
+      scrollTo : { y: finalScroll, autoKill:true },
+      ease: Power1.easeOut,
+      overwrite: 5
+    });
+
+  });
+
+/* /Scroll */
 
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
@@ -325,7 +345,6 @@ $(document).ready(function () {
   menu.init();
 
   /*Animation*/
-
   var controller = new ScrollMagic.Controller();
 
   var InfoImg = TweenMax.to("#info-img-translate, #info-img-bord-left, #info-img-bord-top", 2, {

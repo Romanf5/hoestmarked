@@ -108,13 +108,14 @@ section {
   width: 10px;
   height: 100%;
   left: 0;
-  transform: scaleX(100);
+  transform-origin: left;
 }
 
 .section-img-r-board{
   width: 10px;
   height: 100%;
   right: 0;
+  transform-origin: right;
 }
 
 .section-img-t-board {
@@ -122,4 +123,5 @@ section {
   width: 100%;
   left: 0;
   transform: scaleY(100);
+  transform-origin: top;
 }

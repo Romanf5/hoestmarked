@@ -3,21 +3,37 @@
 // Author: Nathan Rutzky
 // Update: 1.0.2
 
-(function($) {
+(function ($) {
 
-  jQuery.scrollSpeed = function(step, speed, easing) {
+  jQuery.scrollSpeed = function (step, speed, easing) {
 
     var $document = $(document),
       $window = $(window),
       $body = $('html, body'),
       option = easing || 'default',
-      root = 0,
+      root = $(window).scrollTop() || 0,
       scroll = false,
       scrollY,
       scrollX,
-      view;
+      view,
+      select = false;
 
-    $window.on('mousewheel DOMMouseScroll', function(e) {
+    $('select').on('keyup', function () {
+      select = true;
+    })
+      .on('mouseenter', 'option', function () {
+        select = true;
+      })
+      .on('mouseleave', function () {
+        select = false;
+      })
+      .on('blur', function () {
+        select = false;
+      });
+
+    $window.on('mousewheel DOMMouseScroll MozMousePixelScroll', function (e) {
+      if (select)
+        return;
 
       var deltaY = e.originalEvent.wheelDelta,
         detail = e.originalEvent.detail;
@@ -45,7 +61,7 @@
 
             scrollTop: root
 
-          }, speed, option, function() {
+          }, speed, option, function () {
 
             scroll = false;
 
@@ -55,7 +71,7 @@
 
             scrollTop: root
 
-          }, speed, option, function() {
+          }, speed, option, function () {
 
             scroll = false;
 
@@ -79,7 +95,7 @@
 
           scrollLeft: root
 
-        }, speed, option, function() {
+        }, speed, option, function () {
 
           scroll = false;
 
@@ -88,12 +104,12 @@
 
       return false;
 
-    }).on('scroll', function() {
+    }).on('scroll', function () {
 
       if (scrollY && !scroll) root = $window.scrollTop();
       if (scrollX && !scroll) root = $window.scrollLeft();
 
-    }).on('resize', function() {
+    }).on('resize', function () {
 
       if (scrollY && !scroll) view = $window.height();
       if (scrollX && !scroll) view = $window.width();
@@ -101,9 +117,9 @@
     });
   };
 
-  jQuery.easing.default = function (x,t,b,c,d) {
+  jQuery.easing.default = function (x, t, b, c, d) {
 
-    return -c * ((t=t/d-1)*t*t*t - 1) + b;
+    return -c * ((t = t / d - 1) * t * t * t - 1) + b;
   };
 
 })(jQuery);
