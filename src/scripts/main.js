@@ -3,8 +3,8 @@ $(document).ready(function () {
 
   /*Scroll */
   var $window = $(window);
-  var scrollTime = 0.8;
-  var scrollDistance = 170;
+  var scrollTime = 1;
+  var scrollDistance = 90;
   $window.on("mousewheel DOMMouseScroll", function(event){
 
     event.preventDefault();
@@ -399,7 +399,15 @@ $(document).ready(function () {
   marketImgOwerlay.to("#market-img-bord-left, #market-img-bord-right", 2, {scaleX:0})
     .to("#market-img-bord-top",2,{scaleY:0},0);
 
+  var contactImgOwerlay = new TimelineLite();
+  contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX:0})
+    .to("#contact-img-bord-top",4,{scaleY:0},0);
+
   var marketText = TweenMax.to("#market-text", 2, {y:-100});
+
+  var contactText = TweenMax.to("#contact-text",4, {opacity:1});
+
+  var contactImgText = TweenMax.to("#contact-img-text", 5, {y:0});
 
   var s = new ScrollMagic.Scene({
     triggerElement: "#trigger",
@@ -479,6 +487,30 @@ $(document).ready(function () {
     offset: 0
   }).setTween(marketText)
     .addIndicators({name:"marketText"})
+    .addTo(controller);
+
+  var s12 = new ScrollMagic.Scene({
+    triggerElement: "#trigger6",
+    duration: 500,
+    offset: 0
+  }).setTween(contactImgOwerlay)
+    .addIndicators({name:"contactO"})
+    .addTo(controller);
+
+  var s13 = new ScrollMagic.Scene({
+    triggerElement: "#trigger6",
+    duration: 500,
+    offset: 200
+  }).setTween(contactText)
+    .addIndicators({name:"contactT"})
+    .addTo(controller);
+
+  var s14 = new ScrollMagic.Scene({
+    triggerElement: "#trigger6",
+    duration: 700,
+    offset: 250
+  }).setTween(contactImgText)
+    .addIndicators({name:"contactIT"})
     .addTo(controller);
 
 });

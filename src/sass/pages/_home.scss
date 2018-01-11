@@ -358,6 +358,7 @@
 .contact-section {
   padding-top: 291px;
   padding-bottom: 200px;
+  overflow: hidden;
 
   &__container{
     max-width: 1758px;
@@ -367,11 +368,24 @@
   &__text{
     max-width: 432px;
     margin-bottom: 35px;
+    opacity: 0;
   }
 
   &__img{
     max-width: 1198px;
     position: relative;
+
+    .section-img-l-board{
+      transform: scaleX(20);
+    }
+
+    .section-img-r-board{
+      transform: scaleX(10);
+    }
+
+    .section-img-t-board{
+      transform: scaleY(20);
+    }
   }
 
   .section-title{
@@ -463,6 +477,7 @@
   position: absolute;
   bottom: -144px;
   left: -381px;
+  transform: translateY(350px);
 
   >a{
     display: block;
