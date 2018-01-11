@@ -29,15 +29,13 @@
 
   //No delete (rules for animation)
   &__img{
-    transform: scale(0.7) translateY(300px);
+    transform: translateY(300px);
   }
 
   &__container{
     position: relative;
     max-width: 1170px;
     margin-left: auto;
-    margin-right: -180px;
-
   }
 
   &__text{
@@ -79,8 +77,24 @@
     margin-right: auto;
   }
 
+  &__img-wrp{
+    overflow: hidden;
+  }
+
   &__img{
     position: relative;
+
+    .section-img-l-board{
+      transform: scaleX(40);
+    }
+
+    .section-img-r-board{
+      transform: scaleX(40);
+    }
+
+    .section-img-t-board{
+      transform: scaleY(25);
+    }
 
     .img-description{
       position: absolute;
@@ -104,10 +118,6 @@
 
       }
     }
-  }
-
-  &__img-wrp{
-    transform: scale(0.8);
   }
 
   &__text{
@@ -149,6 +159,7 @@
 .slider-section{
   padding-top: 65px;
   padding-bottom: 150px;
+  overflow: hidden;
 
   &__container{
     position: relative;
@@ -159,6 +170,9 @@
   .slider-container{
     max-width: 1672px;
     margin-left: auto;
+    .section-img-t-board{
+      transform: scaleY(40);
+    }
   }
 
   .sub-content-slider{
@@ -169,6 +183,7 @@
   &__text{
     max-width: 635px;
     color: $slider-section-text;
+    opacity: 0;
   }
 
   .section-title{
@@ -205,6 +220,19 @@
 
   &__img{
     max-width: 1144px;
+    position: relative;
+
+    .section-img-l-board{
+      transform: scaleX(30);
+    }
+
+    .section-img-t-board{
+      transform: scaleY(20);
+    }
+
+    .section-img-r-board{
+      transform: scaleX(30);
+    }
   }
 
   &__text{
@@ -216,6 +244,7 @@
     color: $main-color;
     padding: 120px 0;
     background-color: $ecology-section-color;
+    transform: translateY(300px);
 
     .text-content{
       max-width: 735px;

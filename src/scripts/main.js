@@ -72,12 +72,12 @@ $(document).ready(function () {
 
   var headerBtn = {
     menuBtn: $('.menu-btn-wrap'),
-    menui:$('.icon-menu'),
+    menui: $('.icon-menu'),
     mapi: $('.icon-map-icon'),
     mapBtn: $('.map-btn-wrp'),
-    showIcon: function(){
-      $(this.menui).velocity({opacity:1},{easing: 'easeIn', delay: 300});
-      $(this.mapi).velocity({opacity:1},{easing: 'easeIn', delay: 300});
+    showIcon: function () {
+      $(this.menui).velocity({opacity: 1}, {easing: 'easeIn', delay: 300});
+      $(this.mapi).velocity({opacity: 1}, {easing: 'easeIn', delay: 300});
     },
     scaleLoad: function () {
       $(this.menuBtn).velocity({scale: 1}, {easing: 'easeIn', delay: 2000});
@@ -319,72 +319,126 @@ $(document).ready(function () {
     }
   };
 
+  heroSection.bannerShow();
+  headerBtn.scaleLoad();
+
+  menu.init();
+
+  /*Animation*/
+
   var controller = new ScrollMagic.Controller();
 
-  var tweenInfoImg = TweenMax.to("#info-img", 2, {
+  var InfoImg = TweenMax.to("#info-img-translate, #info-img-bord-left, #info-img-bord-top", 2, {
     scale: 1,
-    y:0
+    y: 0
   });
-  var tweenInfoImg2 = TweenMax.to("#find-section-img", 2, {
-    scale: 1,
-    y:0
-  });
-
-  var tweenInfoText = TweenMax.to("#info-text",3,{
-    y:0,
+  var InfoText = TweenMax.to("#info-text", 3, {
+    y: 0,
   });
 
-  var imgDesc = TweenMax.to("#img-desc",1,{
-    y:0 ,
-  });
-  var mapText = TweenMax.to("#find-text",1,{
-    opacity:1,
+  var timelineImgText = new TimelineLite();
+
+  timelineImgText.to("#find-img-bord-left, #find-img-bord-right", 2, {
+    scaleX: 0,
+  })
+    .to("#find-img-bord-top", 2, {
+      scaleY: 0,
+    }, 0)
+    .to("#img-desc", 4, {
+      y: 0,
+    }, 0.5);
+
+  var timeLineSliderOverlay = new TimelineLite();
+
+   timeLineSliderOverlay.to("#slider-img-bord-left, #slider-img-bord-right", 2, {
+     scaleX: 0,
+   })
+     .to("#slider-img-bord-top", 2, {
+     scaleY: 0,
+   }, 0);
+
+   var ekologyTimeLine = new TimelineLite();
+
+   ekologyTimeLine.to("#ecology-img-bord-left, #ecology-img-bord-right", 2, {scaleX:0})
+     .to("#ecology-img-bord-top",2,{scaleY:0},0)
+     .to("#ecology-text",8,{y:-60});
+
+  var mapText = TweenMax.to("#find-text", 1, {
+    opacity: 1,
   });
 
-  var scene1 = new ScrollMagic.Scene({
+  var boy = TweenMax.to("#boy", 5,{
+    y:-550
+  });
+
+  var sliderText = TweenMax.to("#slider-text", 2, {
+    opacity: 1,
+    y:-50
+  });
+
+  var s = new ScrollMagic.Scene({
     triggerElement: "#trigger",
     duration: 900,
     offset: -350
-  }).setTween(tweenInfoImg)
+  }).setTween(InfoImg)
     .addIndicators()
     .addTo(controller);
 
-  var s2 =  new ScrollMagic.Scene({
+  var s2 = new ScrollMagic.Scene({
     triggerElement: "#trigger",
     duration: 1250,
     offset: -350
-  }).setTween(tweenInfoText)
+  }).setTween(InfoText)
     .addIndicators()
     .addTo(controller);
 
   var s3 = new ScrollMagic.Scene({
     triggerElement: "#trigger2",
-    duration: 300,
-    offset: 0
-  }).setTween(tweenInfoImg2)
-    .addIndicators()
+    duration: 1000,
+    offset: -15
+  }).setTween(timelineImgText)
+    .addIndicators({name: 'Find img'})
     .addTo(controller);
 
   var s4 = new ScrollMagic.Scene({
     triggerElement: "#trigger2",
-    duration: 500,
-    offset: 0
-  }).setTween(imgDesc)
-    .addIndicators()
+    duration: 400,
+    offset: 300
+  }).setTween(mapText)
+    .addIndicators({name: "Map Text"})
     .addTo(controller);
 
   var s5 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2",
-    duration: 200,
-    offset: 150
-  }).setTween(mapText)
-    .addIndicators()
+    triggerElement: "#trigger3",
+    duration: 490,
+    offset: -200
+  }).setTween(timeLineSliderOverlay)
+    .addIndicators({name: "Slider"})
     .addTo(controller);
 
-  heroSection.bannerShow();
-  headerBtn.scaleLoad();
+  var s6 = new ScrollMagic.Scene({
+    triggerElement: "#trigger3",
+    duration: 1800,
+    offset: 290
+  }).setTween(boy)
+    .addIndicators({name: "boy"})
+    .addTo(controller);
 
-  menu.init();
+  var s7 = new ScrollMagic.Scene({
+    triggerElement: "#trigger3",
+    duration: 1200,
+    offset: 700
+  }).setTween(sliderText)
+    .addIndicators({name: "Text"})
+    .addTo(controller);
+
+  var s8 = new ScrollMagic.Scene({
+    triggerElement: "#trigger4",
+    duration: 1200,
+    offset: -250
+  }).setTween( ekologyTimeLine)
+    .addIndicators({name: "Ecology"})
+    .addTo(controller);
 
 });
 

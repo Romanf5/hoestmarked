@@ -40,7 +40,6 @@ section {
   position: relative;
 }
 
-
 /*.page-container {
   max-width: $container-width;
   margin-left: auto;
@@ -53,14 +52,14 @@ section {
   display: inline-block;
 }
 
-.section-title{
+.section-title {
   margin-top: 0;
   font-size: $title-font-size;
   line-height: $title-line-height;
   font-weight: $regular-font-weght;
 }
 
-.section-sub-title{
+.section-sub-title {
   margin-top: 0;
   margin-bottom: 17px;
   font-family: $bold-font;
@@ -69,30 +68,58 @@ section {
   line-height: $sub-title-font-line-height;
 }
 
-.description-text{
+.description-text {
   font-size: 14px;
   line-height: 22px;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
 
-  &--jastify-between{
+  &--jastify-between {
     justify-content: space-between;
   }
 
-  &--column{
+  &--column {
     flex-direction: column;
   }
 
-  &--align-center{
+  &--align-center {
     justify-content: center;
     align-items: center;
   }
 
-  &--align-start{
+  &--align-start {
     align-items: start;
   }
 
 }
 
+.section-img-l-board,
+.section-img-t-board,
+.section-img-r-board {
+  position: absolute;
+  background: $main-color;
+  transform: scaleX(100);
+  top: 0;
+}
+
+.section-img-l-board {
+  width: 10px;
+  height: 100%;
+  left: 0;
+  transform: scaleX(100);
+}
+
+.section-img-r-board{
+  width: 10px;
+  height: 100%;
+  right: 0;
+}
+
+.section-img-t-board {
+  height: 10px;
+  width: 100%;
+  left: 0;
+  transform: scaleY(100);
+}
