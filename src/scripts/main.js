@@ -3,8 +3,8 @@ $(document).ready(function () {
 
   /*Scroll */
   var $window = $(window);
-  var scrollTime = 0.5;
-  var scrollDistance = 120;
+  var scrollTime = 0.4;
+  var scrollDistance = 150;
 
   $window.on("mousewheel DOMMouseScroll", function(event){
 
@@ -155,21 +155,66 @@ $(document).ready(function () {
       })
     },
     minScale: function () {
-      var self = this;
-      $.Velocity.animate(self.banner, {
-        scale: 0.93,
+      $.Velocity.animate($('#hero-img-bord-left'), {
+        scale: 7,
       }, {
         easing: 'linear',
         duration: 300,
-      })
-    },
-    defaultScale: function () {
-      var self = this;
-      $.Velocity.animate(self.banner, {
-        scale: 1,
+      });
+
+      $.Velocity.animate($('#hero-img-bord-right'), {
+        scale: 7,
       }, {
         easing: 'linear',
-        duration: 200,
+        duration: 300,
+      });
+
+      $.Velocity.animate($('#hero-img-bord-top'), {
+        scale: 7,
+      }, {
+        easing: 'linear',
+        duration: 300,
+      });
+
+      $.Velocity.animate($('#hero-img-bord-bot'), {
+        scale: 7,
+      }, {
+        easing: 'linear',
+        duration: 300,
+      });
+    },
+    defaultScale: function () {
+
+      $.Velocity.animate($('#hero-img-bord-left'), {
+        scale: 0,
+      }, {
+        easing: 'linear',
+        duration: 300,
+        delay: 500
+      });
+
+      $.Velocity.animate($('#hero-img-bord-right'), {
+        scale: 0,
+      }, {
+        easing: 'linear',
+        duration: 300,
+        delay: 500
+      });
+
+      $.Velocity.animate($('#hero-img-bord-bot'), {
+        scale: 0,
+      }, {
+        easing: 'linear',
+        duration: 300,
+        delay: 500
+      });
+
+      $.Velocity.animate($('#hero-img-bord-top'), {
+        scale: 0,
+      }, {
+        easing: 'linear',
+        duration: 300,
+        delay: 500
       });
     }
   };

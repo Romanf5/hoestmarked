@@ -97,7 +97,7 @@ section {
 
 .section-img-l-board,
 .section-img-t-board,
-.section-img-r-board {
+.section-img-r-board{
   position: absolute;
   background: $main-color;
   transform: scaleX(100);
@@ -124,4 +124,14 @@ section {
   left: 0;
   transform: scaleY(100);
   transform-origin: top;
+}
+
+.section-img-b-board{
+  height: 10px;
+  width: 100%;
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: $main-color;
 }

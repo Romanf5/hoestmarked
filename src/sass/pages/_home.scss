@@ -2,6 +2,14 @@
   height: 100vh;
   padding: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
+
+  .section-img-l-board,
+  .section-img-r-board,
+  .section-img-t-board,
+  .section-img-b-board{
+    transform: scale(0);
+  }
 
   &__banner{
     position: relative;
