@@ -296,18 +296,7 @@
     margin-left: auto;
     overflow: hidden;
     position: relative;
-
-    .section-img-l-board{
-      transform: scaleX(20);
-    }
-
-    .section-img-r-board{
-      transform: scaleX(20);
-    }
-
-    .section-img-t-board{
-      transform: scaleX(20);
-    }
+    transform: translateY(-190px);
   }
 
   &__text{

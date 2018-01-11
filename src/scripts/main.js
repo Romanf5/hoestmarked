@@ -155,6 +155,7 @@ $(document).ready(function () {
       })
     },
     minScale: function () {
+
       $.Velocity.animate($('#hero-img-bord-left'), {
         scale: 7,
       }, {
@@ -440,10 +441,7 @@ $(document).ready(function () {
     y:-50
   });
 
-  var marketImgOwerlay = new TimelineLite();
-
-  marketImgOwerlay.to("#market-img-bord-left, #market-img-bord-right", 2, {scaleX:0})
-    .to("#market-img-bord-top",2,{scaleY:0},0);
+  var marketImg = TweenMax.to("#market-img",2, {y:0});
 
   var contactImgOwerlay = new TimelineLite();
   contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX:0})
@@ -523,7 +521,7 @@ $(document).ready(function () {
     triggerElement: "#trigger5",
     duration: 1000,
     offset: -270
-  }).setTween(marketImgOwerlay)
+  }).setTween(marketImg)
     .addIndicators({name:"marketOverlay"})
     .addTo(controller);
 
