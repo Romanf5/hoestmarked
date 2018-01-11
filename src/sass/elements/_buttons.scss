@@ -12,15 +12,36 @@
   font-size: 23px;
   font-family: $bold-font;
   font-weight: 400;
+  border: 2px solid transparent;
+  transition: 0.5s;
+
+  &:hover{
+    background-color: #779027;
+    border-color: $main-color;
+    color: $main-color;
+  }
 
   &--section-info{
     transform: translateX(-25px);
+
+
+    &:hover{
+      background-color: $main-color;
+      color: $info-section-title-color;
+      border-color: $info-section-title-color;
+    }
   }
 
   &--find-section{
     background-color: $find-section-color;
     padding-left: 30px;
     padding-right: 30px;
+
+    &:hover{
+      background-color: $main-color;
+      border-color: $find-section-color;
+      color: $find-section-color;
+    }
   }
 
   &--slider-section{
@@ -30,6 +51,12 @@
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+
+    &:hover{
+      background-color: $main-color;
+      border-color: $slider-section-btn;
+      color: $slider-section-btn;
+    }
 
     &:first-of-type{
       margin-bottom: 20px;
@@ -47,6 +74,10 @@
 
   &--market-section{
     background-color: $market-decor-color;
+    
+    &:hover{
+      background-color: #a2742b;
+    }
   }
 }
 

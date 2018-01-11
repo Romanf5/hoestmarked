@@ -459,7 +459,11 @@
 
   &__email{
     display: block;
-    color: $email-color
+    color: $email-color;
+
+    &:hover{
+      color: darken($email-color, 10%);
+    }
   }
 
   &:last-of-type{

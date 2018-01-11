@@ -3,8 +3,9 @@ $(document).ready(function () {
 
   /*Scroll */
   var $window = $(window);
-  var scrollTime = 1;
-  var scrollDistance = 90;
+  var scrollTime = 0.5;
+  var scrollDistance = 120;
+
   $window.on("mousewheel DOMMouseScroll", function(event){
 
     event.preventDefault();
