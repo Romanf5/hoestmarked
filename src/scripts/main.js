@@ -1,10 +1,10 @@
 $(document).ready(function () {
   var body = $('body');
+
   /*Scroll */
   var $window = $(window);
-  var scrollTime = 0.7;
-  var scrollDistance = 200;
-
+  var scrollTime = 0.8;
+  var scrollDistance = 170;
   $window.on("mousewheel DOMMouseScroll", function(event){
 
     event.preventDefault();
@@ -20,7 +20,6 @@ $(document).ready(function () {
     });
 
   });
-
 /* /Scroll */
 
   var headerLineAnimation = {
@@ -395,6 +394,13 @@ $(document).ready(function () {
     y:-50
   });
 
+  var marketImgOwerlay = new TimelineLite();
+
+  marketImgOwerlay.to("#market-img-bord-left, #market-img-bord-right", 2, {scaleX:0})
+    .to("#market-img-bord-top",2,{scaleY:0},0);
+
+  var marketText = TweenMax.to("#market-text", 2, {y:-100});
+
   var s = new ScrollMagic.Scene({
     triggerElement: "#trigger",
     duration: 900,
@@ -457,6 +463,22 @@ $(document).ready(function () {
     offset: -250
   }).setTween( ekologyTimeLine)
     .addIndicators({name: "Ecology"})
+    .addTo(controller);
+
+  var s9 = new ScrollMagic.Scene({
+    triggerElement: "#trigger5",
+    duration: 1000,
+    offset: -270
+  }).setTween(marketImgOwerlay)
+    .addIndicators({name:"marketOverlay"})
+    .addTo(controller);
+
+  var s11 = new ScrollMagic.Scene({
+    triggerElement: "#trigger5",
+    duration: 1000,
+    offset: 0
+  }).setTween(marketText)
+    .addIndicators({name:"marketText"})
     .addTo(controller);
 
 });

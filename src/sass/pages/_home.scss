@@ -170,6 +170,7 @@
   .slider-container{
     max-width: 1672px;
     margin-left: auto;
+
     .section-img-t-board{
       transform: scaleY(40);
     }
@@ -285,6 +286,20 @@
   &__img{
     max-width: 804px;
     margin-left: auto;
+    overflow: hidden;
+    position: relative;
+
+    .section-img-l-board{
+      transform: scaleX(20);
+    }
+
+    .section-img-r-board{
+      transform: scaleX(20);
+    }
+
+    .section-img-t-board{
+      transform: scaleX(20);
+    }
   }
 
   &__text{
@@ -299,6 +314,7 @@
     padding-bottom: 82px;
     padding-left: 15px;
     padding-right: 15px;
+    transform: translateY(200px);
 
     .text-content{
       position: relative;
@@ -341,6 +357,7 @@
 
 .contact-section {
   padding-top: 291px;
+  padding-bottom: 200px;
 
   &__container{
     max-width: 1758px;
@@ -354,6 +371,7 @@
 
   &__img{
     max-width: 1198px;
+    position: relative;
   }
 
   .section-title{
@@ -432,5 +450,50 @@
 
   &:last-of-type{
     margin-bottom: 0;
+  }
+}
+
+.contact-img-text{
+  max-width: 440px;
+  width: 100%;
+  background-color: $press-color;
+  text-align: center;
+  padding-top: 154px;
+  padding-bottom: 165px;
+  position: absolute;
+  bottom: -144px;
+  left: -381px;
+
+  >a{
+    display: block;
+  }
+
+  .contact-img-text-content{
+    max-width: 160px;
+    margin: 0 auto;
+    text-align: left;
+    color: $main-color;
+  }
+
+  .section-title{
+    color: $main-color;
+  }
+
+  .press-wrp{
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 20px;
+
+    &__title{
+      font-size: 27px;
+      font-family: $bold-font;
+      margin-bottom: 10px;
+    }
+
+    .press-email{
+      color: #737d69;
+      font-size: 17px;
+      font-weight: 700;
+    }
   }
 }
