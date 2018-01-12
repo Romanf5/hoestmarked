@@ -178,9 +178,16 @@
   .slider-container{
     max-width: 1672px;
     margin-left: auto;
+    position: relative;
 
     .section-img-t-board{
       transform: scaleY(40);
+    }
+
+    .section-img-t-board,
+    .section-img-l-board,
+    .section-img-r-board{
+      z-index: 10000;
     }
   }
 

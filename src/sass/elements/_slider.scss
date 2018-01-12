@@ -1,0 +1,21 @@
+.slider-control{
+  width: 215px;
+  height: 118px;
+  background-color: $main-color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: scaleX(0);
+  transform-origin: left;
+  >button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: 0 none;
+  }
+}

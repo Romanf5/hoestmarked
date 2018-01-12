@@ -54,7 +54,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-icon-insta {
   background-image: url(../images/spritesheet.png);
-  background-position: 0px 0px;
+  background-position: 0px -42px;
   width: 121px;
   height: 40px;
 }
@@ -70,15 +70,27 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 19px;
   height: 22px;
 }
+.icon-next {
+  background-image: url(../images/spritesheet.png);
+  background-position: -151px -83px;
+  width: 9px;
+  height: 18px;
+}
 .icon-people {
   background-image: url(../images/spritesheet.png);
   background-position: -117px -111px;
   width: 19px;
   height: 14px;
 }
+.icon-prev {
+  background-image: url(../images/spritesheet.png);
+  background-position: -163px 0px;
+  width: 9px;
+  height: 18px;
+}
 .icon-slice-1 {
   background-image: url(../images/spritesheet.png);
-  background-position: 0px -42px;
+  background-position: 0px 0px;
   width: 121px;
   height: 40px;
 }

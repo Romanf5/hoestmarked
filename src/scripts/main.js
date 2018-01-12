@@ -452,6 +452,7 @@ $(document).ready(function () {
   var contactText = TweenMax.to("#contact-text",4, {opacity:1});
 
   var contactImgText = TweenMax.to("#contact-img-text", 5, {y:0});
+  var sliderControl = TweenMax.to('#control-slider',1, {scaleX:1});
 
   var s = new ScrollMagic.Scene({
     triggerElement: "#trigger",
@@ -491,6 +492,14 @@ $(document).ready(function () {
     offset: -200
   }).setTween(timeLineSliderOverlay)
     .addIndicators({name: "Slider"})
+    .addTo(controller);
+
+  var s5_1 = new ScrollMagic.Scene({
+    triggerElement: "#trigger3",
+    duration: 80,
+    offset: 500
+  }).setTween(sliderControl)
+    .addIndicators({name: "Slider Control"})
     .addTo(controller);
 
   var s6 = new ScrollMagic.Scene({
@@ -556,6 +565,28 @@ $(document).ready(function () {
   }).setTween(contactImgText)
     .addIndicators({name:"contactIT"})
     .addTo(controller);
+
+
+  /*Slider*/
+  var slick = $("#slider").slick({
+    appendArrows: $('.slider-control'),
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
+  });
+
+  var cSlide = $('#cSlide');
+  var aSlides = $('#aSlides');
+  var cS = slick.slick('slickCurrentSlide');
+  var gSlick = slick.slick('getSlick');
+
+  aSlides.text(gSlick.$slides.length);
+  cSlide.text(cS+1);
+
+  slick.on('afterChange',function(event, slick, currentSlide){
+    cSlide.text(currentSlide+1);
+  });
+
+
 
 });
 
