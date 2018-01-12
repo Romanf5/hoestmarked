@@ -15,6 +15,16 @@
   border: 2px solid transparent;
   transition: 0.5s;
 
+  @include max-w($screen-xxl){
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  @include max-w($screen-xl){
+    font-size: 16px;
+    padding: 10px;
+  }
+
   &:hover{
     background-color: #779027;
     border-color: $main-color;
@@ -52,6 +62,10 @@
     padding-right: 0;
     text-align: center;
 
+    @include max-w($screen-xxl){
+      width: 240px;
+    }
+
     &:hover{
       background-color: $main-color;
       border-color: $slider-section-btn;
@@ -65,6 +79,11 @@
     &:last-of-type{
       width: 260px;
       transform: translateX(50px);
+
+      @include max-w($screen-xxl){
+        width: 230px;
+      }
+
     }
   }
 

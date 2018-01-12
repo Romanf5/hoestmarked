@@ -1,5 +1,6 @@
 $(document).ready(function () {
   var body = $('body');
+  var width = $('window').width;
 
   /*Scroll */
   var $window = $(window);
@@ -454,9 +455,17 @@ $(document).ready(function () {
   var contactImgText = TweenMax.to("#contact-img-text", 5, {y:0});
   var sliderControl = TweenMax.to('#control-slider',1, {scaleX:1});
 
+  var durationInfoImg;
+
+  if(width>1200){
+    durationInfoImg = 900;
+  }else{
+    durationInfoImg = 600;
+  }
+
   var s = new ScrollMagic.Scene({
     triggerElement: "#trigger",
-    duration: 900,
+    duration: durationInfoImg,
     offset: -350
   }).setTween(InfoImg)
     .addIndicators()
@@ -494,10 +503,18 @@ $(document).ready(function () {
     .addIndicators({name: "Slider"})
     .addTo(controller);
 
+
+  var offsetControlSlider;
+  if(width>1440){
+    offsetControlSlider = 500;
+  }else{
+    offsetControlSlider = 300;
+  }
+
   var s5_1 = new ScrollMagic.Scene({
     triggerElement: "#trigger3",
     duration: 80,
-    offset: 500
+    offset: offsetControlSlider
   }).setTween(sliderControl)
     .addIndicators({name: "Slider Control"})
     .addTo(controller);
@@ -510,10 +527,18 @@ $(document).ready(function () {
     .addIndicators({name: "boy"})
     .addTo(controller);
 
+
+  var offsetTextSlider;
+  if(width>1200){
+    offsetTextSlider = 700;
+  }else{
+    offsetTextSlider = 300;
+  }
+
   var s7 = new ScrollMagic.Scene({
     triggerElement: "#trigger3",
     duration: 1200,
-    offset: 700
+    offset:  offsetTextSlider
   }).setTween(sliderText)
     .addIndicators({name: "Text"})
     .addTo(controller);
@@ -586,8 +611,8 @@ $(document).ready(function () {
     cSlide.text(currentSlide+1);
   });
 
-
-
 });
+
+
 
 

@@ -16,6 +16,10 @@
   transform: translateX(-300%);
   transition: 0.8s;
 
+  @include max-w($screen-xl){
+    width: 60%;
+  }
+
   .content-wrp {
     max-width: 280px;
   }
@@ -38,6 +42,10 @@
 .right-part {
   width: 35%;
 
+  @include max-w($screen-xl){
+    width: 40%;
+  }
+
   .content-wrp{
     max-width: 340px;
     opacity: 0;
@@ -59,6 +67,16 @@
       line-height: 68px;
       color: $menu-item-color;
 
+      @include max-w($screen-xxl){
+        font-size: 32px;
+        line-height: 55px;
+      }
+
+      @include max-w($screen-xl){
+        font-size: 28px;
+        line-height: 40px;
+      }
+
     }
   }
 }
@@ -71,20 +89,36 @@
     margin-bottom: 35px;
   }
 
+  @include max-w($screen-xxl){
+    margin-bottom: 22px;
+  }
+
   &__title{
     font-family: $title-font;
     font-size: 30px;
     line-height: 35px;
+
+    @include max-w($screen-xl){
+      font-size: 25px;
+    }
   }
 
   &__description{
     font-family: $bold-font;
     font-weight: $bold-font-w;
     font-size: 17px;
+
+    @include max-w($screen-xl){
+      font-size: 14px;
+    }
   }
 
   &:last-of-type{
     margin-bottom: 120px;
+
+    @include max-w($screen-xl){
+      margin-bottom: 60px;
+    }
   }
 }
 
