@@ -17,6 +17,10 @@
     background: url('../images/hero-banner-home.png') no-repeat center/cover;
     opacity: 0;
   }
+
+  @include max-w($screen-xxxl){
+    margin-bottom: 0;
+  }
 }
 
 .logo{
@@ -44,6 +48,10 @@
     position: relative;
     max-width: 1170px;
     margin-left: auto;
+
+    @include max-w($screen-xxxl){
+      max-width: 860px;
+    }
   }
 
   &__text{
@@ -52,6 +60,10 @@
     top: 65px;
     left: -505px;
     transform: translateY(500px);
+
+    @include max-w($screen-xxxl){
+      left:-455px;
+    }
   }
 
   .section-title{
@@ -80,6 +92,11 @@
   padding-top: 234px;
   padding-bottom: 65px;
 
+  @include max-w($screen-xxxl){
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
   &__container{
     max-width: 1870px;
     margin-right: auto;
@@ -91,6 +108,7 @@
 
   &__img{
     position: relative;
+    padding-right: 25px ;
 
     .section-img-l-board{
       transform: scaleX(40);
@@ -169,10 +187,19 @@
   padding-bottom: 150px;
   overflow: hidden;
 
+  @include max-w($screen-xxxl){
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
   &__container{
     position: relative;
     max-width: 1738px;
     margin-left: auto;
+
+    @include max-w($screen-xxxl){
+      max-width: 1300px;
+    }
   }
 
   .slider-container{
@@ -221,6 +248,10 @@
     right: 160px;
     top:-226px;
     max-width: 778px;
+
+    @include max-w($screen-xxxl){
+      max-width: 568px;
+    }
   }
 }
 
@@ -228,15 +259,27 @@
   padding-top: 150px;
   padding-bottom: 222px;
 
+  @include max-w($screen-xxxl){
+    padding-top: 50px;
+  }
+
   &__container{
     position: relative;
     max-width: 1860px;
     margin-right: auto;
+
+    @include max-w($screen-xxxl){
+      max-width: 1200px;
+    }
   }
 
   &__img{
     max-width: 1144px;
     position: relative;
+
+    @include max-w($screen-xxxl){
+      max-width: 900px;
+    }
 
     .section-img-l-board{
       transform: scaleX(30);
@@ -254,13 +297,19 @@
   &__text{
     position: absolute;
     top:338px;
-    right: 110px;
+    right: -720px;
     max-width: 993px;
     width: 100%;
     color: $main-color;
     padding: 120px 0;
     background-color: $ecology-section-color;
     transform: translateY(300px);
+
+    @include max-w($screen-xxxl){
+      padding: 50px 0;
+      top: 150px;
+      right: -510px;
+    }
 
     .text-content{
       max-width: 735px;
@@ -364,15 +413,27 @@
   padding-bottom: 200px;
   overflow: hidden;
 
+  @include max-w($screen-xxxl){
+    padding-top: 100px;
+  }
+
   &__container{
     max-width: 1758px;
     margin-left: auto;
+
+    @include max-w($screen-xxxl){
+      max-width: 1300px;
+    }
   }
 
   &__text{
     max-width: 432px;
     margin-bottom: 35px;
     opacity: 0;
+
+    @include max-w($screen-xxxl){
+      margin-right: 25px;
+    }
   }
 
   &__img{
@@ -486,6 +547,13 @@
   bottom: -144px;
   left: -381px;
   transform: translateY(350px);
+
+  @include max-w($screen-xxxl){
+    padding-top: 50px;
+    padding-bottom: 50px;
+    bottom: -70px;
+    left: -205px;
+  }
 
   >a{
     display: block;

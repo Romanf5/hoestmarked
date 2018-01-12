@@ -25,6 +25,11 @@
   max-width: 189px;
   margin: 0 auto 85px;
   opacity: 0;
+
+  @include max-w($screen-xxxl){
+    margin-bottom: 40px;
+  }
+
   img {
     width: 100%;
   }
@@ -61,6 +66,10 @@
 .block-info{
   color: #a1ac96;
   margin-bottom: 60px;
+
+  @include max-w($screen-xxxl){
+    margin-bottom: 35px;
+  }
 
   &__title{
     font-family: $title-font;

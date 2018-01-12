@@ -57,6 +57,10 @@ section {
   font-size: $title-font-size;
   line-height: $title-line-height;
   font-weight: $regular-font-weght;
+
+  @include max-w($screen-xxxl){
+    font-size: 65px;
+  }
 }
 
 .section-sub-title {
