@@ -44,6 +44,11 @@
   transition: transform 0.5s;
   outline: 0 none;
   border: 0 none;
+
+  @include max-w($screen-sm-start){
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .map-btn-wrp {

@@ -75,6 +75,16 @@ section {
     font-size: 45px;
     line-height: 48px;
   }
+
+  @include max-w($screen-sm-start){
+    font-size: 39px;
+    line-height: 42px;
+  }
+
+  @include max-w($screen-sm){
+    font-size: 27px;
+    line-height: 30px;
+  }
 }
 
 .section-sub-title {
@@ -88,6 +98,10 @@ section {
   @include max-w($screen-xxl){
     font-size: 22px;
     line-height: 26px;
+  }
+
+  @include max-w($screen-sm){
+    font-size: 18px;
   }
 }
 

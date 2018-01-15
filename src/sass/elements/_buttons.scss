@@ -34,6 +34,10 @@
   &--section-info{
     transform: translateX(-25px);
 
+    @include max-w($screen-sm-start){
+      transform: translateX(0)
+    }
+
 
     &:hover{
       background-color: $main-color;

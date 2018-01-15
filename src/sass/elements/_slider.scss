@@ -19,6 +19,11 @@
     height: 90px;
   }
 
+  @include max-w($screen-sm){
+    width: 160px;
+    height: 60px;
+  }
+
   >button{
     background-color: transparent;
     border: none;
