@@ -4,6 +4,10 @@
   margin-bottom: 30px;
   overflow: hidden;
 
+  @include max-w($screen-md){
+    padding: 0;
+  }
+
   .section-img-l-board,
   .section-img-r-board,
   .section-img-t-board,
@@ -14,8 +18,15 @@
   &__banner{
     position: relative;
     height: 100%;
-    background: url('../images/hero-banner-home.png') no-repeat center/cover;
+    background-image: url('../images/hero-banner-home.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
     opacity: 0;
+
+    @include max-w($screen-md){
+      background-position: 15%;
+    }
   }
 
   @include max-w($screen-xxxl){

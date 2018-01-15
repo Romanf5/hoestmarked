@@ -1,13 +1,16 @@
 $(document).ready(function () {
   var body = $('body');
-  var width = $('window').width;
+  var width = $(window).outerWidth();
+
 
   /*Scroll */
   var $window = $(window);
   var scrollTime = 0.4;
   var scrollDistance = 150;
 
-  $window.on("mousewheel DOMMouseScroll", function(event){
+  $('body').on("mousewheel DOMMouseScroll", function(event){
+
+    if (!menu.menuBtn.hasClass('icon-close')){
 
     event.preventDefault();
 
@@ -20,6 +23,8 @@ $(document).ready(function () {
       ease: Power1.easeOut,
       overwrite: 5
     });
+
+    }
 
   });
 /* /Scroll */
@@ -76,7 +81,6 @@ $(document).ready(function () {
     },
     scroll: function (element) {
       $(window).on('scroll', function () {
-        if (!menu.menuBtn.hasClass('icon-close')) {
           if ($(window).scrollTop() > 0) {
             if (headerLineAnimation.marker) {
               headerLineAnimation.lineShow(element);
@@ -86,7 +90,6 @@ $(document).ready(function () {
             headerLineAnimation.marker = true;
             headerLineAnimation.textHidden();
           }
-        }
       })
     }
   };
@@ -390,6 +393,7 @@ $(document).ready(function () {
   headerBtn.scaleLoad();
 
   menu.init();
+  if (width >= 1024){
 
   /*Animation*/
   var controller = new ScrollMagic.Controller();
@@ -590,7 +594,7 @@ $(document).ready(function () {
   }).setTween(contactImgText)
     .addIndicators({name:"contactIT"})
     .addTo(controller);
-
+  }
 
   /*Slider*/
   var slick = $("#slider").slick({
