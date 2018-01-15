@@ -258,6 +258,10 @@ $(document).ready(function () {
         progress: function (elements, complite, start) {
           if (start) {
             menu.menuBtn.addClass('trans-bg');
+
+            if (width<1024){
+              $('.map-btn-wrp').addClass('trans-bg');
+            }
           }
 
           if (Math.floor(complite * 100) === 70) {
@@ -346,6 +350,9 @@ $(document).ready(function () {
         duration: 150,
       }).then(function () {
         menu.menuBtn.removeClass('trans-bg');
+        if(width<1024){
+          $('.map-btn-wrp').removeClass('trans-bg');
+        }
         menu.hiddenOveraly();
       })
     },
@@ -393,7 +400,6 @@ $(document).ready(function () {
   headerBtn.scaleLoad();
 
   menu.init();
-  if (width >= 1024){
 
   /*Animation*/
   var controller = new ScrollMagic.Controller();
@@ -594,7 +600,6 @@ $(document).ready(function () {
   }).setTween(contactImgText)
     .addIndicators({name:"contactIT"})
     .addTo(controller);
-  }
 
   /*Slider*/
   var slick = $("#slider").slick({

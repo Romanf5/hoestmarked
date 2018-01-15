@@ -18,6 +18,10 @@ body {
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
+
+  @include max-w($screen-xl){
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -120,12 +124,18 @@ section {
   position: absolute;
   background: $main-color;
   transform: scaleX(100);
-  top: 0;
+  top: -1px;
+
+
+  @include max-w($screen-lg){
+    display: none;
+  }
 }
 
 .section-img-l-board {
   width: 10px;
   height: 100%;
+  top: 0;
   left: 0;
   transform-origin: left;
 }
@@ -133,7 +143,8 @@ section {
 .section-img-r-board{
   width: 10px;
   height: 100%;
-  right: 0;
+  right: -1px;
+  top: 0;
   transform-origin: right;
 }
 
@@ -143,6 +154,10 @@ section {
   left: 0;
   transform: scaleY(100);
   transform-origin: top;
+
+  @include max-w($screen-lg){
+    display: none;
+  }
 }
 
 .section-img-b-board{
@@ -153,4 +168,8 @@ section {
   bottom: 0;
   left: 0;
   background: $main-color;
+
+  @include max-w($screen-lg){
+    display: none;
+  }
 }

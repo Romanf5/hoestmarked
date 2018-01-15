@@ -24,6 +24,10 @@
     width: 60%;
   }
 
+  @include max-w($screen-lg){
+    padding-bottom: 20px;
+  }
+
   @include max-w($screen-md){
     width: 100%;
   }
@@ -52,6 +56,8 @@
 
   @include max-w($screen-xl){
     width: 40%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .content-wrp{
