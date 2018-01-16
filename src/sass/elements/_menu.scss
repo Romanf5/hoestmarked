@@ -12,10 +12,6 @@
   @include max-w($screen-md){
     flex-wrap: wrap;
   }
-
-  @include max-w($screen-sm-start){
-    overflow: auto;
-  }
 }
 
 .left-part {
@@ -36,10 +32,6 @@
     width: 100%;
   }
 
-  @include max-w($screen-sm-start){
-    padding-top: 20px;
-  }
-
   .content-wrp {
     max-width: 280px;
   }
@@ -52,11 +44,6 @@
 
   @include max-w($screen-xxxl){
     margin-bottom: 40px;
-  }
-
-  @include max-w($screen-sm-start){
-    max-width: 140px;
-    margin-bottom: 20px;
   }
 
   img {

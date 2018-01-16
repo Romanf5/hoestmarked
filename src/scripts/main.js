@@ -1,6 +1,7 @@
 $(document).ready(function () {
   var body = $('body');
   var width = $(window).outerWidth();
+  var done;
 
 
   /*Scroll */
@@ -48,21 +49,18 @@ $(document).ready(function () {
       });
     },
     textShow: function () {
-      $(this.headerLineText).velocity("transition.fadeIn",
+      $.Velocity.animate(this.headerLineText, "transition.fadeIn",
         {
           duration: 300
         })
     },
     textHidden: function (delay) {
-      $(this.headerLineText).velocity({opacity: 0},
+      $.Velocity.animate(this.headerLineText, {opacity: 0},
         {
           duration: 300,
-          progress: function (elements, complete, remaining, start, tweenValue) {
-            if (Math.floor(complete * 100) === 100) {
-              headerLineAnimation.lineHidden(headerLineAnimation.headerLine, delay);
-            }
-          }
-        })
+        }).then(function () {
+        headerLineAnimation.lineHidden(headerLineAnimation.headerLine, delay);
+      })
     },
     lineHidden: function (element, delay) {
       var delayTime = delay;
@@ -87,6 +85,7 @@ $(document).ready(function () {
           }
         } else if ($(window).scrollTop() === 0) {
           headerLineAnimation.marker = true;
+          done = false;
           headerLineAnimation.textHidden();
         }
       })
@@ -400,205 +399,208 @@ $(document).ready(function () {
 
   menu.init();
 
-  /*Animation*/
-  var controller = new ScrollMagic.Controller();
 
-  var InfoImg = TweenMax.to("#info-img-translate, #info-img-bord-left, #info-img-bord-top", 2, {
-    scale: 1,
-    y: 0
-  });
-  var InfoText = TweenMax.to("#info-text", 3, {
-    y: 0,
-  });
+  if (width >= 1024) {
+    /*Animation*/
+    var controller = new ScrollMagic.Controller();
 
-  var timelineImgText = new TimelineLite();
-
-  timelineImgText.to("#find-img-bord-left, #find-img-bord-right", 2, {
-    scaleX: 0,
-  })
-    .to("#find-img-bord-top", 2, {
-      scaleY: 0,
-    }, 0)
-    .to("#img-desc", 4, {
+    var InfoImg = TweenMax.to("#info-img-translate, #info-img-bord-left, #info-img-bord-top", 2, {
+      scale: 1,
+      y: 0
+    });
+    var InfoText = TweenMax.to("#info-text", 3, {
       y: 0,
-    }, 0.5);
+    });
 
-  var timeLineSliderOverlay = new TimelineLite();
+    var timelineImgText = new TimelineLite();
 
-  timeLineSliderOverlay.to("#slider-img-bord-left, #slider-img-bord-right", 2, {
-    scaleX: 0,
-  })
-    .to("#slider-img-bord-top", 2, {
-      scaleY: 0,
-    }, 0);
+    timelineImgText.to("#find-img-bord-left, #find-img-bord-right", 2, {
+      scaleX: 0,
+    })
+      .to("#find-img-bord-top", 2, {
+        scaleY: 0,
+      }, 0)
+      .to("#img-desc", 4, {
+        y: 0,
+      }, 0.5);
 
-  var ekologyTimeLine = new TimelineLite();
+    var timeLineSliderOverlay = new TimelineLite();
 
-  ekologyTimeLine.to("#ecology-img-bord-left, #ecology-img-bord-right", 2, {scaleX: 0})
-    .to("#ecology-img-bord-top", 2, {scaleY: 0}, 0)
-    .to("#ecology-text", 8, {y: -60});
+    timeLineSliderOverlay.to("#slider-img-bord-left, #slider-img-bord-right", 2, {
+      scaleX: 0,
+    })
+      .to("#slider-img-bord-top", 2, {
+        scaleY: 0,
+      }, 0);
 
-  var mapText = TweenMax.to("#find-text", 1, {
-    opacity: 1,
-  });
+    var ekologyTimeLine = new TimelineLite();
 
-  var boy = TweenMax.to("#boy", 5, {
-    y: -550
-  });
+    ekologyTimeLine.to("#ecology-img-bord-left, #ecology-img-bord-right", 2, {scaleX: 0})
+      .to("#ecology-img-bord-top", 2, {scaleY: 0}, 0)
+      .to("#ecology-text", 8, {y: -60});
 
-  var sliderText = TweenMax.to("#slider-text", 2, {
-    opacity: 1,
-    y: -50
-  });
+    var mapText = TweenMax.to("#find-text", 1, {
+      opacity: 1,
+    });
 
-  var marketImg = TweenMax.to("#market-img", 2, {y: 0});
+    var boy = TweenMax.to("#boy", 5, {
+      y: -550
+    });
 
-  var contactImgOwerlay = new TimelineLite();
-  contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX: 0})
-    .to("#contact-img-bord-top", 4, {scaleY: 0}, 0);
+    var sliderText = TweenMax.to("#slider-text", 2, {
+      opacity: 1,
+      y: -50
+    });
 
-  var marketText = TweenMax.to("#market-text", 2, {y: -100});
+    var marketImg = TweenMax.to("#market-img", 2, {y: 0});
 
-  var contactText = TweenMax.to("#contact-text", 4, {opacity: 1});
+    var contactImgOwerlay = new TimelineLite();
+    contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX: 0})
+      .to("#contact-img-bord-top", 4, {scaleY: 0}, 0);
 
-  var contactImgText = TweenMax.to("#contact-img-text", 5, {y: 0});
-  var sliderControl = TweenMax.to('#control-slider', 1, {scaleX: 1});
+    var marketText = TweenMax.to("#market-text", 2, {y: -100});
 
-  var durationInfoImg;
+    var contactText = TweenMax.to("#contact-text", 4, {opacity: 1});
 
-  if (width > 1200) {
-    durationInfoImg = 900;
-  } else {
-    durationInfoImg = 600;
+    var contactImgText = TweenMax.to("#contact-img-text", 5, {y: 0});
+    var sliderControl = TweenMax.to('#control-slider', 1, {scaleX: 1});
+
+    var durationInfoImg;
+
+    if (width > 1200) {
+      durationInfoImg = 900;
+    } else {
+      durationInfoImg = 600;
+    }
+
+    var s = new ScrollMagic.Scene({
+      triggerElement: "#trigger",
+      duration: durationInfoImg,
+      offset: -350
+    }).setTween(InfoImg)
+      .addIndicators()
+      .addTo(controller);
+
+    var s2 = new ScrollMagic.Scene({
+      triggerElement: "#trigger",
+      duration: 1250,
+      offset: -350
+    }).setTween(InfoText)
+      .addIndicators()
+      .addTo(controller);
+
+    var s3 = new ScrollMagic.Scene({
+      triggerElement: "#trigger2",
+      duration: 1000,
+      offset: -15
+    }).setTween(timelineImgText)
+      .addIndicators({name: 'Find img'})
+      .addTo(controller);
+
+    var s4 = new ScrollMagic.Scene({
+      triggerElement: "#trigger2",
+      duration: 400,
+      offset: 300
+    }).setTween(mapText)
+      .addIndicators({name: "Map Text"})
+      .addTo(controller);
+
+    var s5 = new ScrollMagic.Scene({
+      triggerElement: "#trigger3",
+      duration: 490,
+      offset: -200
+    }).setTween(timeLineSliderOverlay)
+      .addIndicators({name: "Slider"})
+      .addTo(controller);
+
+
+    var offsetControlSlider;
+    if (width > 1440) {
+      offsetControlSlider = 500;
+    } else {
+      offsetControlSlider = 300;
+    }
+
+    var s5_1 = new ScrollMagic.Scene({
+      triggerElement: "#trigger3",
+      duration: 80,
+      offset: offsetControlSlider
+    }).setTween(sliderControl)
+      .addIndicators({name: "Slider Control"})
+      .addTo(controller);
+
+    var s6 = new ScrollMagic.Scene({
+      triggerElement: "#trigger3",
+      duration: 1800,
+      offset: 290
+    }).setTween(boy)
+      .addIndicators({name: "boy"})
+      .addTo(controller);
+
+
+    var offsetTextSlider;
+    if (width > 1200) {
+      offsetTextSlider = 700;
+    } else {
+      offsetTextSlider = 300;
+    }
+
+    var s7 = new ScrollMagic.Scene({
+      triggerElement: "#trigger3",
+      duration: 1200,
+      offset: offsetTextSlider
+    }).setTween(sliderText)
+      .addIndicators({name: "Text"})
+      .addTo(controller);
+
+    var s8 = new ScrollMagic.Scene({
+      triggerElement: "#trigger4",
+      duration: 1200,
+      offset: -250
+    }).setTween(ekologyTimeLine)
+      .addIndicators({name: "Ecology"})
+      .addTo(controller);
+
+    var s9 = new ScrollMagic.Scene({
+      triggerElement: "#trigger5",
+      duration: 1000,
+      offset: -270
+    }).setTween(marketImg)
+      .addIndicators({name: "marketOverlay"})
+      .addTo(controller);
+
+    var s11 = new ScrollMagic.Scene({
+      triggerElement: "#trigger5",
+      duration: 1000,
+      offset: 0
+    }).setTween(marketText)
+      .addIndicators({name: "marketText"})
+      .addTo(controller);
+
+    var s12 = new ScrollMagic.Scene({
+      triggerElement: "#trigger6",
+      duration: 500,
+      offset: 0
+    }).setTween(contactImgOwerlay)
+      .addIndicators({name: "contactO"})
+      .addTo(controller);
+
+    var s13 = new ScrollMagic.Scene({
+      triggerElement: "#trigger6",
+      duration: 500,
+      offset: 200
+    }).setTween(contactText)
+      .addIndicators({name: "contactT"})
+      .addTo(controller);
+
+    var s14 = new ScrollMagic.Scene({
+      triggerElement: "#trigger6",
+      duration: 700,
+      offset: 250
+    }).setTween(contactImgText)
+      .addIndicators({name: "contactIT"})
+      .addTo(controller);
   }
-
-  var s = new ScrollMagic.Scene({
-    triggerElement: "#trigger",
-    duration: durationInfoImg,
-    offset: -350
-  }).setTween(InfoImg)
-    .addIndicators()
-    .addTo(controller);
-
-  var s2 = new ScrollMagic.Scene({
-    triggerElement: "#trigger",
-    duration: 1250,
-    offset: -350
-  }).setTween(InfoText)
-    .addIndicators()
-    .addTo(controller);
-
-  var s3 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2",
-    duration: 1000,
-    offset: -15
-  }).setTween(timelineImgText)
-    .addIndicators({name: 'Find img'})
-    .addTo(controller);
-
-  var s4 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2",
-    duration: 400,
-    offset: 300
-  }).setTween(mapText)
-    .addIndicators({name: "Map Text"})
-    .addTo(controller);
-
-  var s5 = new ScrollMagic.Scene({
-    triggerElement: "#trigger3",
-    duration: 490,
-    offset: -200
-  }).setTween(timeLineSliderOverlay)
-    .addIndicators({name: "Slider"})
-    .addTo(controller);
-
-
-  var offsetControlSlider;
-  if (width > 1440) {
-    offsetControlSlider = 500;
-  } else {
-    offsetControlSlider = 300;
-  }
-
-  var s5_1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger3",
-    duration: 80,
-    offset: offsetControlSlider
-  }).setTween(sliderControl)
-    .addIndicators({name: "Slider Control"})
-    .addTo(controller);
-
-  var s6 = new ScrollMagic.Scene({
-    triggerElement: "#trigger3",
-    duration: 1800,
-    offset: 290
-  }).setTween(boy)
-    .addIndicators({name: "boy"})
-    .addTo(controller);
-
-
-  var offsetTextSlider;
-  if (width > 1200) {
-    offsetTextSlider = 700;
-  } else {
-    offsetTextSlider = 300;
-  }
-
-  var s7 = new ScrollMagic.Scene({
-    triggerElement: "#trigger3",
-    duration: 1200,
-    offset: offsetTextSlider
-  }).setTween(sliderText)
-    .addIndicators({name: "Text"})
-    .addTo(controller);
-
-  var s8 = new ScrollMagic.Scene({
-    triggerElement: "#trigger4",
-    duration: 1200,
-    offset: -250
-  }).setTween(ekologyTimeLine)
-    .addIndicators({name: "Ecology"})
-    .addTo(controller);
-
-  var s9 = new ScrollMagic.Scene({
-    triggerElement: "#trigger5",
-    duration: 1000,
-    offset: -270
-  }).setTween(marketImg)
-    .addIndicators({name: "marketOverlay"})
-    .addTo(controller);
-
-  var s11 = new ScrollMagic.Scene({
-    triggerElement: "#trigger5",
-    duration: 1000,
-    offset: 0
-  }).setTween(marketText)
-    .addIndicators({name: "marketText"})
-    .addTo(controller);
-
-  var s12 = new ScrollMagic.Scene({
-    triggerElement: "#trigger6",
-    duration: 500,
-    offset: 0
-  }).setTween(contactImgOwerlay)
-    .addIndicators({name: "contactO"})
-    .addTo(controller);
-
-  var s13 = new ScrollMagic.Scene({
-    triggerElement: "#trigger6",
-    duration: 500,
-    offset: 200
-  }).setTween(contactText)
-    .addIndicators({name: "contactT"})
-    .addTo(controller);
-
-  var s14 = new ScrollMagic.Scene({
-    triggerElement: "#trigger6",
-    duration: 700,
-    offset: 250
-  }).setTween(contactImgText)
-    .addIndicators({name: "contactIT"})
-    .addTo(controller);
 
   /*Slider*/
   var slick = $("#slider").slick({

@@ -78,11 +78,6 @@ section {
     line-height: 48px;
   }
 
-  @include max-w($screen-sm-start){
-    font-size: 39px;
-    line-height: 42px;
-  }
-
   @include max-w($screen-sm){
     font-size: 27px;
     line-height: 30px;

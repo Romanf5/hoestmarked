@@ -1,223 +1,229 @@
-.hero{
+.hero {
   height: 100vh;
   padding: 30px;
   margin-bottom: 30px;
   overflow: hidden;
 
-  @include max-w($screen-md){
+  @include max-w($screen-md) {
     padding: 0;
   }
 
   .section-img-l-board,
   .section-img-r-board,
   .section-img-t-board,
-  .section-img-b-board{
+  .section-img-b-board {
     transform: scale(0);
   }
 
-  &__banner{
+  &__banner {
     position: relative;
     height: 100%;
     background-image: url('../images/hero-banner-home.png');
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     opacity: 0;
 
-    @include max-w($screen-md){
+    @include max-w($screen-md) {
       background-position: 15%;
     }
   }
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     margin-bottom: 0;
   }
 }
 
-.logo{
+.logo {
   opacity: 0;
 
-  @include max-w($screen-xl){
+  @include max-w($screen-xl) {
     max-width: 200px;
   }
 }
 
-.time-line{
+.time-line {
   position: absolute;
   width: 37px;
   height: 37px;
   bottom: 70px;
   left: 73px;
 
-  @include max-w($screen-sm){
+  @include max-w($screen-sm) {
     bottom: 30px;
     left: 30px;
   }
 }
 
-.info-section{
+.info-section {
   overflow: hidden;
   padding-bottom: 35px;
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     padding-top: 15px;
   }
 
   //No delete (rules for animation)
-  &__img{
+  &__img {
     transform: translateY(300px);
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 820px;
       margin-left: auto;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       transform: translateY(0);
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 400px;
-    }
   }
 
-  &__container{
+  &__container {
     position: relative;
     max-width: 1170px;
     margin-left: auto;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 860px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 590px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       display: flex;
       flex-direction: column-reverse;
     }
   }
 
-  &__text{
+  &__text {
     position: absolute;
     max-width: 802px;
     top: 65px;
     left: -505px;
     transform: translateY(500px);
 
-    @include max-w($screen-xxxl){
-      left:-455px;
+    @include max-w($screen-xxxl) {
+      left: -455px;
     }
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       left: -310px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       position: relative;
       top: 0;
       left: 0;
-      transform: translateY(150px);
+      transform: translateY(22px);
     }
 
-    @include max-w($screen-sm-start){
+    @include max-w($screen-sm) {
       padding-left: 15px;
       padding-right: 15px;
     }
+
   }
 
-  .section-title{
+  .section-title {
     color: $info-section-title-color;
     margin-bottom: 33px;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       margin-bottom: 20px;
     }
   }
 
-  .date{
+  .date {
     font-family: $bold-font;
     font-weight: $bold-font-w;
     font-size: 27px;
     color: $info-section-title-color;
     margin-bottom: 30px;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       margin-bottom: 20px;
       font-size: 22px;
     }
   }
 
-  .description-text{
+  .description-text {
     max-width: 600px;
     color: $info-small-text-color;
     font-size: 14px;
     line-height: 22px;
     margin-bottom: 25px;
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 418px;
     }
   }
 }
 
-.find-section{
+.find-section {
   padding-top: 234px;
   padding-bottom: 65px;
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     padding-top: 150px;
     padding-bottom: 50px;
   }
 
-  @include max-w($screen-xxl){
+  @include max-w($screen-xxl) {
     padding-top: 80px;
   }
 
-  &__container{
+  @include max-w($screen-sm) {
+    padding-top: 50px;
+  }
+
+  &__container {
     max-width: 1870px;
     margin-right: auto;
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       flex-direction: column;
     }
   }
 
-  &__img-wrp{
+  &__img-wrp {
     overflow: hidden;
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 725px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 400px;
-    }
   }
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     max-width: 500px;
   }
 
-  &__img{
+  &__img {
     position: relative;
-    padding-right: 25px ;
+    padding-right: 25px;
 
-    .section-img-l-board{
+    @include max-w($screen-sm) {
+      padding-right: 0;
+      display: flex;
+      flex-direction: column-reverse;
+
+    }
+
+    .section-img-l-board {
       transform: scaleX(40);
     }
 
-    .section-img-r-board{
+    .section-img-r-board {
       transform: scaleX(40);
     }
 
-    .section-img-t-board{
+    .section-img-t-board {
       transform: scaleY(25);
     }
 
-    .img-description{
+    .img-description {
       position: absolute;
       top: -189px;
       right: -177px;
@@ -232,7 +238,7 @@
       background-color: $img-description;
       transform: translateY(250px);
 
-      @include max-w($screen-xxl){
+      @include max-w($screen-xxl) {
         padding-top: 35px;
         padding-bottom: 30px;
         font-size: 24px;
@@ -242,28 +248,26 @@
         top: -160px
       }
 
-      @include max-w($screen-xl){
+      @include max-w($screen-xl) {
         font-size: 19px;
         max-width: 350px;
         right: -100px;
       }
 
-      @include max-w($screen-lg){
+      @include max-w($screen-lg) {
         top: -320px;
         right: -65px;
-        transform: translateY(400px);
+        transform: translateY(231px);
       }
 
-      @include max-w($screen-sm-start){
-        max-width: 200px;
-        right: -35px;
+      @include max-w($screen-sm) {
+        position: static;
+        top: 0;
+        right: 0;
+        transform: translateY(0);
       }
 
-      @include max-w($screen-sm){
-        right: 22px;
-      }
-
-      p{
+      p {
         margin: 0 auto;
         max-width: 435px;
 
@@ -271,7 +275,7 @@
     }
   }
 
-  &__text{
+  &__text {
     max-width: 710px;
     width: 100%;
     padding-top: 235px;
@@ -281,240 +285,231 @@
     background-position-x: 192px;
     opacity: 0;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       flex-shrink: 2;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       padding-top: 70px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       margin-left: 60px;
-    }
-
-    @include max-w($screen-sm-start){
+      opacity: 1;
       max-width: 300px;
-      background: none;
+      background-image: url('../images/mob-map.png');
+      background-repeat: no-repeat;
+      background-position: bottom left;
     }
 
-    @include max-w($screen-sm){
+    @include max-w($screen-sm) {
       margin-left: 0;
       padding-left: 15px;
     }
   }
 
-  .section-title{
+  .section-title {
     margin-bottom: 23px;
   }
 
-  .find-text-indent{
+  .find-text-indent {
     display: block;
 
-    &--sm{
+    &--sm {
       padding-left: 40px;
     }
 
-    &--md{
+    &--md {
       padding-left: 75px;
     }
   }
 
-  .description-content{
+  .description-content {
     max-width: 517px;
   }
 
-  .description-text{
+  .description-text {
     margin-bottom: 25px;
   }
 }
 
-.slider-section{
+.slider-section {
   padding-top: 65px;
   padding-bottom: 150px;
   overflow: hidden;
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     padding-top: 50px;
     padding-bottom: 100px;
   }
 
-  &__container{
+  @include max-w($screen-lg) {
+    padding-bottom: 30px;
+  }
+
+  &__container {
     position: relative;
     max-width: 1738px;
     margin-left: auto;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 1300px;
     }
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 1100px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 860px;
     }
   }
 
-  .slider-container{
+  .slider-container {
     max-width: 1672px;
     margin-left: auto;
     position: relative;
 
-    .section-img-t-board{
+    .section-img-t-board {
       transform: scaleY(40);
     }
 
     .section-img-t-board,
     .section-img-l-board,
-    .section-img-r-board{
+    .section-img-r-board {
       z-index: 10000;
     }
   }
 
-  .sub-content-slider{
+  .sub-content-slider {
     position: relative;
     padding-top: 100px;
   }
 
-  &__text{
+  &__text {
     max-width: 635px;
     color: $slider-section-text;
     opacity: 0;
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       opacity: 1;
       margin-left: 25px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 300px;
-    }
   }
 
-  .section-title{
+  .section-title {
     color: $slider-section-title;
     margin-bottom: 44px;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       margin-bottom: 22px;
     }
   }
 
-  .text-indent-slider{
+  .text-indent-slider {
     display: block;
     padding-left: 127px;
 
-    @include max-w($screen-sm){
+    @include max-w($screen-sm) {
       padding-left: 0;
     }
   }
 
-  .description-text{
+  .description-text {
     margin-bottom: 30px;
   }
 
-  .boy-img-wrp{
+  .boy-img-wrp {
     position: absolute;
     right: 160px;
-    top:-226px;
+    top: -226px;
     max-width: 778px;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 568px;
     }
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 440px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 320px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       max-width: 230px;
       right: 58px;
       top: -165px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 150px;
-      right: 23px;
-      top: -115px;
-    }
-
-    @include max-w($screen-sm){
+    @include max-w($screen-sm) {
       max-width: 100px;
       right: 10px;
+      top: -55px;
     }
   }
 }
 
-.ecology-section{
+.ecology-section {
   padding-top: 150px;
   padding-bottom: 222px;
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     padding-top: 50px;
   }
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     padding-bottom: 20px;
   }
 
-  &__container{
+  &__container {
     position: relative;
     max-width: 1860px;
     margin-right: auto;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 1200px;
     }
   }
 
-  &__img{
+  &__img {
     max-width: 1144px;
     position: relative;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 900px;
     }
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 845px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 650px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 400px;
-
+    @include max-w($screen-sm) {
+      max-width: 100%;
     }
 
-    @include max-w($screen-sm){
-      max-width: 300px;
-    }
-
-    .section-img-l-board{
+    .section-img-l-board {
       transform: scaleX(30);
     }
 
-    .section-img-t-board{
+    .section-img-t-board {
       transform: scaleY(20);
     }
 
-    .section-img-r-board{
+    .section-img-r-board {
       transform: scaleX(30);
     }
   }
 
-  &__text{
+  &__text {
     position: absolute;
-    top:338px;
+    top: 338px;
     right: -720px;
     max-width: 993px;
     width: 100%;
@@ -523,113 +518,110 @@
     background-color: $ecology-section-color;
     transform: translateY(300px);
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       padding: 50px 0;
       top: 150px;
       right: -510px;
     }
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 685px;
       padding-left: 20px;
       padding-right: 20px;
       right: -310px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       position: relative;
-      max-width: 325px;
-      right: -375px;
+      max-width: 500px;
+      right: -210px;
       top: -100px;
       transform: translateY(0);
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 273px;
-      right: -171px;
-    }
-
-    @include max-w($screen-sm){
+    @include max-w($screen-sm) {
       right: -145px;
     }
 
-    @include max-w($screen-sm){
-      max-width: 206px;
-      right: -104px;
+    @include max-w($screen-sm) {
+      position: static;
+      transform: translateY(0);
     }
 
-    .text-content{
+    .text-content {
       max-width: 735px;
       margin: 0 auto;
     }
   }
 
-  .section-title{
+  .section-title {
     margin-bottom: 50px;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       margin-bottom: 22px;
     }
   }
-  .ecology-text-indent{
+  .ecology-text-indent {
     display: block;
 
-    &--sm{
-      padding-left:60px;
-      @include max-w($screen-lg){
+    &--sm {
+      padding-left: 60px;
+      @include max-w($screen-lg) {
         padding-left: 0;
       }
     }
 
-    &--md{
+    &--md {
       padding-left: 95px;
-      @include max-w($screen-lg){
+      @include max-w($screen-lg) {
         padding-left: 0;
       }
     }
   }
 
-  .description-text{
+  .description-text {
     margin-bottom: 25px;
   }
 }
 
-.market-section{
+.market-section {
   padding-top: 222px;
   padding-bottom: 291px;
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     padding-bottom: 20px;
     padding-top: 20px;
   }
 
-  &__container{
+  &__container {
     max-width: 1623px;
     margin-right: auto;
     position: relative;
   }
 
-  &__img{
+  &__img {
     max-width: 804px;
     margin-left: auto;
     overflow: hidden;
     position: relative;
     transform: translateY(-100px);
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 700px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 550px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 400px;
+    @include max-w($screen-sm){
+      transform: translateY(0);
+      max-width: 100%;
     }
+
   }
 
-  &__text{
+  &__text {
     position: absolute;
     bottom: -100px;
     left: 217px;
@@ -643,65 +635,63 @@
     padding-right: 15px;
     transform: translateY(200px);
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       left: 80px;
       padding-top: 115px;
       padding-bottom: 65px;
       max-width: 840px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       position: relative;
-      max-width: 325px;
+      max-width: 500px;
       transform: translateY(0);
-      top: -200px;
+      top: -150px;
     }
 
-    @include max-w($screen-sm-start){
-      max-width: 280px;
-      top: -100px;
-      left: 30px;
+    @include max-w($screen-sm){
+      position: static;
     }
 
-    .text-content{
+    .text-content {
       position: relative;
       max-width: 780px;
       margin: 0 auto;
     }
   }
 
-  .section-title{
+  .section-title {
     margin-bottom: 25px;
   }
 
-  .description-text{
-    p{
+  .description-text {
+    p {
       margin-top: 0;
     }
   }
 
-  .marker-zone{
+  .marker-zone {
     margin: 0;
     list-style: none;
     padding-left: 0;
     padding-top: 20px;
     margin-bottom: 36px;
 
-    &__item{
+    &__item {
       vertical-align: middle;
       margin-bottom: 15px;
       font-family: $title-font;
       font-size: 20px;
       color: $market-zone-color;
 
-      @include max-w($screen-xxl){
+      @include max-w($screen-xxl) {
         font-size: 18px;
         margin-bottom: 10px;
       }
 
-      i{
+      i {
         vertical-align: middle;
-        margin-right:12px;
+        margin-right: 12px;
       }
     }
   }
@@ -712,101 +702,107 @@
   padding-bottom: 200px;
   overflow: hidden;
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     padding-top: 100px;
   }
 
-  @include max-w($screen-xl){
+  @include max-w($screen-xl) {
     padding-top: 225px;
     overflow: visible;
   }
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     padding-top: 20px;
   }
 
-  &__container{
+  @include max-w($screen-sm){
+    padding-bottom: 0;
+  }
+
+  &__container {
     max-width: 1758px;
     margin-left: auto;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       max-width: 1385px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
   }
 
-  &__text{
+  &__text {
     max-width: 432px;
     margin-bottom: 35px;
     opacity: 0;
 
-    @include max-w($screen-xxxl){
+    @include max-w($screen-xxxl) {
       margin-right: 25px;
     }
 
-    @include max-w($screen-lg){
+    @include max-w($screen-lg) {
       opacity: 1;
+    }
+
+    @include max-w($screen-sm){
+      max-width: 100%;
+      text-align: center;
     }
   }
 
-  &__img{
+  &__img {
     max-width: 1198px;
     position: relative;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       max-width: 900px;
     }
 
-    @include max-w($screen-xl){
+    @include max-w($screen-xl) {
       max-width: 625px;
     }
 
-    .section-img-l-board{
+    .section-img-l-board {
       transform: scaleX(20);
     }
 
-    .section-img-r-board{
+    .section-img-r-board {
       transform: scaleX(10);
     }
 
-    .section-img-t-board{
+    .section-img-t-board {
       transform: scaleY(20);
     }
   }
 
-  .section-title{
+  .section-title {
     color: $contact-color;
   }
 
-  .description-content{
+  .description-content {
     padding-left: 20px;
   }
 
-  .section-sub-title{
+  .section-sub-title {
     color: $contact-color;
     font-size: 27px;
-
-    @include max-w($screen-sm-start){
-      font-size: 20px;
-    }
   }
 }
 
-.text-indent{
+.text-indent {
   display: block;
   transform: translateX(-50px);
 
-  @include max-w($screen-sm-start){
-    transform: translateX(0)
+  @include max-w($screen-sm) {
+    transform: translateX(0);
   }
+
 }
 
-.date-block{
+.date-block {
   width: 178px;
   height: 166px;
   background-color: $market-decor-color;
@@ -817,14 +813,14 @@
   left: 45px;
   right: auto;
 
-  &__content{
+  &__content {
     max-width: 115px;
     margin: 0 auto;
     text-align: center;
   }
 
-  span{
-    &:first-of-type{
+  span {
+    &:first-of-type {
       font-family: $title-font;
       font-size: 79px;
       font-weight: 300;
@@ -833,7 +829,7 @@
       display: block;
     }
 
-    &:last-of-type{
+    &:last-of-type {
       display: block;
       font-family: $bold-font;
       font-weight: $bold-font-w;
@@ -843,34 +839,34 @@
   }
 }
 
-.contact-item{
+.contact-item {
   margin-bottom: 20px;
 
   &__country,
-  &__tel{
+  &__tel {
     display: block;
     color: $contact-color;
 
-    &:hover{
+    &:hover {
       color: $contact-color;
     }
   }
 
-  &__email{
+  &__email {
     display: block;
     color: $email-color;
 
-    &:hover{
+    &:hover {
       color: darken($email-color, 10%);
     }
   }
 
-  &:last-of-type{
+  &:last-of-type {
     margin-bottom: 0;
   }
 }
 
-.contact-img-text{
+.contact-img-text {
   max-width: 440px;
   width: 100%;
   background-color: $press-color;
@@ -882,62 +878,65 @@
   left: -381px;
   transform: translateY(350px);
 
-  @include max-w($screen-xxxl){
+  @include max-w($screen-xxxl) {
     padding-top: 50px;
     padding-bottom: 50px;
     bottom: -70px;
     left: -205px;
   }
 
-  @include max-w($screen-xl){
+  @include max-w($screen-xl) {
     max-width: 290px;
     bottom: -165px;
     left: -135px;
   }
 
-  @include max-w($screen-lg){
+  @include max-w($screen-lg) {
     bottom: 15px;
     left: 145px;
   }
 
-  @include max-w($screen-sm){
-    max-width: 210px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    left: 85px;
+  @include max-w($screen-sm) {
+    max-width: 100%;
+    position: static;
+    transform: translateY(0);
   }
 
-  >a{
+  > a {
     display: block;
   }
 
-  .contact-img-text-content{
+  .contact-img-text-content {
     max-width: 160px;
     margin: 0 auto;
     text-align: left;
     color: $main-color;
+
+    @include max-w($screen-sm){
+      text-align: center;
+    }
   }
 
-  .section-title{
+  .section-title {
     color: $main-color;
   }
 
-  .press-wrp{
+  .press-wrp {
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 20px;
 
-    &__title{
+    &__title {
       font-size: 27px;
       font-family: $bold-font;
       margin-bottom: 10px;
 
-      @include max-w($screen-sm){
+      @include max-w($screen-sm) {
         font-size: 20px;
       }
     }
 
-    .press-email{
+    .press-email {
       color: #737d69;
       font-size: 17px;
       font-weight: 700;

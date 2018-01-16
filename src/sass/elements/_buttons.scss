@@ -34,8 +34,8 @@
   &--section-info{
     transform: translateX(-25px);
 
-    @include max-w($screen-sm-start){
-      transform: translateX(0)
+    @include max-w($screen-sm){
+      transform: translateX(0);
     }
 
 
