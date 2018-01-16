@@ -1,0 +1,74 @@
+.intro {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  &__banner {
+    padding: 30px;
+  }
+
+  &__bg {
+    position: relative;
+    height: 65vh;
+    background-image: url('../images/bliv-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .section-img-l-board,
+    .section-img-r-board,
+    .section-img-t-board,
+    .section-img-b-board {
+      transform: scale(0);
+    }
+  }
+
+  &__text {
+    max-width: 1024px;
+    background-color: rgba(72, 77, 67, 0.8);
+    color: $main-color;
+    text-align: center;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 80px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .section-title {
+      margin-bottom: 15px;
+    }
+
+    .section-sub-title {
+      font-size: 20px;
+      line-height: 25px;
+      max-width: 840px;
+      margin: 0 auto 110px;
+    }
+
+    .title-info-content {
+      font-size: 20px;
+      line-height: 25px;
+      color: #a1ac96;
+      font-family: $bold-font;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.intro-content {
+  max-width: 670px;
+  margin: 0 auto;
+  color: #a1ac96;
+
+  &__position {
+    margin-bottom: 25px;
+  }
+
+  a{
+    display: block;
+    color: #a1ac96;
+  }
+}

@@ -1,37 +1,6 @@
 $(document).ready(function () {
   var body = $('body');
   var width = $(window).outerWidth();
-  var done;
-
-
-  /*Scroll */
-  var $window = $(window);
-  var scrollTime = 0.4;
-  var scrollDistance = 150;
-
-
-  if (width > 1024) {
-    $('body').on("mousewheel DOMMouseScroll", function (event) {
-
-      if (!menu.menuBtn.hasClass('icon-close')) {
-
-        event.preventDefault();
-
-        var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
-        var scrollTop = $window.scrollTop();
-        var finalScroll = scrollTop - parseInt(delta * scrollDistance);
-
-        TweenMax.to($window, scrollTime, {
-          scrollTo: {y: finalScroll, autoKill: true},
-          ease: Power1.easeOut,
-          overwrite: 5
-        });
-
-      }
-
-    });
-    /* /Scroll */
-  }
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
     headerLineText: $('#scroll-line-text'),
@@ -91,7 +60,6 @@ $(document).ready(function () {
       })
     }
   };
-
   var headerBtn = {
     menuBtn: $('.menu-btn-wrap'),
     menui: $('.icon-menu'),
@@ -109,7 +77,6 @@ $(document).ready(function () {
       })
     }
   };
-
   var heroSection = {
     logo: $('.logo'),
     banner: $('.js-animation-banner'),
@@ -221,7 +188,6 @@ $(document).ready(function () {
       });
     }
   };
-
   var menu = {
     menuBtn: $('.menu-btn-wrap'),
     menuWrapper: $('.menu-wrp'),
@@ -394,13 +360,37 @@ $(document).ready(function () {
     }
   };
 
-  heroSection.bannerShow();
-  headerBtn.scaleLoad();
+  /*Scroll */
+  var $window = $(window);
+  var scrollTime = 0.4;
+  var scrollDistance = 150;
 
-  menu.init();
+  if (width > 1024) {
+    $('body').on("mousewheel DOMMouseScroll", function (event) {
 
+      if (!menu.menuBtn.hasClass('icon-close')) {
 
-  if (width >= 1024) {
+        event.preventDefault();
+
+        var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+        var scrollTop = $window.scrollTop();
+        var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+        TweenMax.to($window, scrollTime, {
+          scrollTo: {y: finalScroll, autoKill: true},
+          ease: Power1.easeOut,
+          overwrite: 5
+        });
+
+      }
+
+    });
+    /* /Scroll */
+  }
+  /* /Scroll*/
+
+  /*Animation Home page*/
+  if (width >= 1024 && $('body').hasClass('home-page')) {
     /*Animation*/
     var controller = new ScrollMagic.Controller();
 
@@ -601,26 +591,36 @@ $(document).ready(function () {
       .addIndicators({name: "contactIT"})
       .addTo(controller);
   }
+  /* /Animation Home page*/
 
-  /*Slider*/
-  var slick = $("#slider").slick({
-    appendArrows: $('.slider-control'),
-    prevArrow: $('.slick-prev'),
-    nextArrow: $('.slick-next'),
-  });
+  /*Slider Home page*/
+  if ($('body').hasClass('home-page')) {
+    /*Slider*/
+    var slick = $("#slider").slick({
+      appendArrows: $('.slider-control'),
+      prevArrow: $('.slick-prev'),
+      nextArrow: $('.slick-next'),
+    });
 
-  var cSlide = $('#cSlide');
-  var aSlides = $('#aSlides');
-  var cS = slick.slick('slickCurrentSlide');
-  var gSlick = slick.slick('getSlick');
+    var cSlide = $('#cSlide');
+    var aSlides = $('#aSlides');
+    var cS = slick.slick('slickCurrentSlide');
+    var gSlick = slick.slick('getSlick');
 
-  aSlides.text(gSlick.$slides.length);
-  cSlide.text(cS + 1);
+    aSlides.text(gSlick.$slides.length);
+    cSlide.text(cS + 1);
 
-  slick.on('afterChange', function (event, slick, currentSlide) {
-    cSlide.text(currentSlide + 1);
-  });
+    slick.on('afterChange', function (event, slick, currentSlide) {
+      cSlide.text(currentSlide + 1);
+    });
+  }
+  /*Slider Home page*/
 
+  /*Main Init*/
+  heroSection.bannerShow();
+  headerBtn.scaleLoad();
+  menu.init();
+  /*Main Init*/
 });
 
 
