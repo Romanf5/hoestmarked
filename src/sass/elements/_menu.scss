@@ -8,6 +8,7 @@
   z-index: 900;
   transform: translateX(100%);
   transition: 0.8s;
+  overflow: auto;
 
   @include max-w($screen-md){
     flex-wrap: wrap;
