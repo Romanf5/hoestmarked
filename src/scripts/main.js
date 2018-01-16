@@ -41,12 +41,9 @@ $(document).ready(function () {
           duration: 700,
           delay: 200,
           easing: [0.05, 0.78, 1, 1],
-          progress: function (elements, complete, remaining, start, tweenValue) {
-            if (Math.floor(complete * 100) === 64) {
-              headerLineAnimation.textShow();
-            }
-          }
-        });
+        }).then(function () {
+        headerLineAnimation.textShow();
+      });
     },
     textShow: function () {
       $(this.headerLineText).velocity("transition.fadeIn",

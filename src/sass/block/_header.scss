@@ -19,11 +19,12 @@
 .scroll-slide-line {
   width: 0;
   background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   &__text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     opacity: 0;
   }
 }

@@ -18,6 +18,7 @@ body {
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
+  overflow: hidden;
 
   @include max-w($screen-xl){
     overflow-x: hidden;
