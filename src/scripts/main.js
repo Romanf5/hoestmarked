@@ -8,27 +8,29 @@ $(document).ready(function () {
   var scrollTime = 0.4;
   var scrollDistance = 150;
 
-  $('body').on("mousewheel DOMMouseScroll", function(event){
 
-    if (!menu.menuBtn.hasClass('icon-close')){
+  if (width > 1024) {
+    $('body').on("mousewheel DOMMouseScroll", function (event) {
 
-    event.preventDefault();
+      if (!menu.menuBtn.hasClass('icon-close')) {
 
-    var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-    var scrollTop = $window.scrollTop();
-    var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+        event.preventDefault();
 
-    TweenMax.to($window, scrollTime, {
-      scrollTo : { y: finalScroll, autoKill:true },
-      ease: Power1.easeOut,
-      overwrite: 5
+        var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+        var scrollTop = $window.scrollTop();
+        var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+        TweenMax.to($window, scrollTime, {
+          scrollTo: {y: finalScroll, autoKill: true},
+          ease: Power1.easeOut,
+          overwrite: 5
+        });
+
+      }
+
     });
-
-    }
-
-  });
-/* /Scroll */
-
+    /* /Scroll */
+  }
   var headerLineAnimation = {
     headerLine: $('#scroll-line'),
     headerLineText: $('#scroll-line-text'),
@@ -78,15 +80,15 @@ $(document).ready(function () {
     },
     scroll: function (element) {
       $(window).on('scroll', function () {
-          if ($(window).scrollTop() > 0) {
-            if (headerLineAnimation.marker) {
-              headerLineAnimation.lineShow(element);
-              headerLineAnimation.marker = false;
-            }
-          } else if ($(window).scrollTop() === 0) {
-            headerLineAnimation.marker = true;
-            headerLineAnimation.textHidden();
+        if ($(window).scrollTop() > 0) {
+          if (headerLineAnimation.marker) {
+            headerLineAnimation.lineShow(element);
+            headerLineAnimation.marker = false;
           }
+        } else if ($(window).scrollTop() === 0) {
+          headerLineAnimation.marker = true;
+          headerLineAnimation.textHidden();
+        }
       })
     }
   };
@@ -256,7 +258,7 @@ $(document).ready(function () {
           if (start) {
             menu.menuBtn.addClass('trans-bg');
 
-            if (width<1024){
+            if (width < 1024) {
               $('.map-btn-wrp').addClass('trans-bg');
             }
           }
@@ -347,7 +349,7 @@ $(document).ready(function () {
         duration: 150,
       }).then(function () {
         menu.menuBtn.removeClass('trans-bg');
-        if(width<1024){
+        if (width < 1024) {
           $('.map-btn-wrp').removeClass('trans-bg');
         }
         menu.hiddenOveraly();
@@ -423,50 +425,50 @@ $(document).ready(function () {
 
   var timeLineSliderOverlay = new TimelineLite();
 
-   timeLineSliderOverlay.to("#slider-img-bord-left, #slider-img-bord-right", 2, {
-     scaleX: 0,
-   })
-     .to("#slider-img-bord-top", 2, {
-     scaleY: 0,
-   }, 0);
+  timeLineSliderOverlay.to("#slider-img-bord-left, #slider-img-bord-right", 2, {
+    scaleX: 0,
+  })
+    .to("#slider-img-bord-top", 2, {
+      scaleY: 0,
+    }, 0);
 
-   var ekologyTimeLine = new TimelineLite();
+  var ekologyTimeLine = new TimelineLite();
 
-   ekologyTimeLine.to("#ecology-img-bord-left, #ecology-img-bord-right", 2, {scaleX:0})
-     .to("#ecology-img-bord-top",2,{scaleY:0},0)
-     .to("#ecology-text",8,{y:-60});
+  ekologyTimeLine.to("#ecology-img-bord-left, #ecology-img-bord-right", 2, {scaleX: 0})
+    .to("#ecology-img-bord-top", 2, {scaleY: 0}, 0)
+    .to("#ecology-text", 8, {y: -60});
 
   var mapText = TweenMax.to("#find-text", 1, {
     opacity: 1,
   });
 
-  var boy = TweenMax.to("#boy", 5,{
-    y:-550
+  var boy = TweenMax.to("#boy", 5, {
+    y: -550
   });
 
   var sliderText = TweenMax.to("#slider-text", 2, {
     opacity: 1,
-    y:-50
+    y: -50
   });
 
-  var marketImg = TweenMax.to("#market-img",2, {y:0});
+  var marketImg = TweenMax.to("#market-img", 2, {y: 0});
 
   var contactImgOwerlay = new TimelineLite();
-  contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX:0})
-    .to("#contact-img-bord-top",4,{scaleY:0},0);
+  contactImgOwerlay.to("#contact-img-bord-left, #contact-img-bord-right", 4, {scaleX: 0})
+    .to("#contact-img-bord-top", 4, {scaleY: 0}, 0);
 
-  var marketText = TweenMax.to("#market-text", 2, {y:-100});
+  var marketText = TweenMax.to("#market-text", 2, {y: -100});
 
-  var contactText = TweenMax.to("#contact-text",4, {opacity:1});
+  var contactText = TweenMax.to("#contact-text", 4, {opacity: 1});
 
-  var contactImgText = TweenMax.to("#contact-img-text", 5, {y:0});
-  var sliderControl = TweenMax.to('#control-slider',1, {scaleX:1});
+  var contactImgText = TweenMax.to("#contact-img-text", 5, {y: 0});
+  var sliderControl = TweenMax.to('#control-slider', 1, {scaleX: 1});
 
   var durationInfoImg;
 
-  if(width>1200){
+  if (width > 1200) {
     durationInfoImg = 900;
-  }else{
+  } else {
     durationInfoImg = 600;
   }
 
@@ -512,9 +514,9 @@ $(document).ready(function () {
 
 
   var offsetControlSlider;
-  if(width>1440){
+  if (width > 1440) {
     offsetControlSlider = 500;
-  }else{
+  } else {
     offsetControlSlider = 300;
   }
 
@@ -536,16 +538,16 @@ $(document).ready(function () {
 
 
   var offsetTextSlider;
-  if(width>1200){
+  if (width > 1200) {
     offsetTextSlider = 700;
-  }else{
+  } else {
     offsetTextSlider = 300;
   }
 
   var s7 = new ScrollMagic.Scene({
     triggerElement: "#trigger3",
     duration: 1200,
-    offset:  offsetTextSlider
+    offset: offsetTextSlider
   }).setTween(sliderText)
     .addIndicators({name: "Text"})
     .addTo(controller);
@@ -554,7 +556,7 @@ $(document).ready(function () {
     triggerElement: "#trigger4",
     duration: 1200,
     offset: -250
-  }).setTween( ekologyTimeLine)
+  }).setTween(ekologyTimeLine)
     .addIndicators({name: "Ecology"})
     .addTo(controller);
 
@@ -563,7 +565,7 @@ $(document).ready(function () {
     duration: 1000,
     offset: -270
   }).setTween(marketImg)
-    .addIndicators({name:"marketOverlay"})
+    .addIndicators({name: "marketOverlay"})
     .addTo(controller);
 
   var s11 = new ScrollMagic.Scene({
@@ -571,7 +573,7 @@ $(document).ready(function () {
     duration: 1000,
     offset: 0
   }).setTween(marketText)
-    .addIndicators({name:"marketText"})
+    .addIndicators({name: "marketText"})
     .addTo(controller);
 
   var s12 = new ScrollMagic.Scene({
@@ -579,7 +581,7 @@ $(document).ready(function () {
     duration: 500,
     offset: 0
   }).setTween(contactImgOwerlay)
-    .addIndicators({name:"contactO"})
+    .addIndicators({name: "contactO"})
     .addTo(controller);
 
   var s13 = new ScrollMagic.Scene({
@@ -587,7 +589,7 @@ $(document).ready(function () {
     duration: 500,
     offset: 200
   }).setTween(contactText)
-    .addIndicators({name:"contactT"})
+    .addIndicators({name: "contactT"})
     .addTo(controller);
 
   var s14 = new ScrollMagic.Scene({
@@ -595,7 +597,7 @@ $(document).ready(function () {
     duration: 700,
     offset: 250
   }).setTween(contactImgText)
-    .addIndicators({name:"contactIT"})
+    .addIndicators({name: "contactIT"})
     .addTo(controller);
 
   /*Slider*/
@@ -611,10 +613,10 @@ $(document).ready(function () {
   var gSlick = slick.slick('getSlick');
 
   aSlides.text(gSlick.$slides.length);
-  cSlide.text(cS+1);
+  cSlide.text(cS + 1);
 
-  slick.on('afterChange',function(event, slick, currentSlide){
-    cSlide.text(currentSlide+1);
+  slick.on('afterChange', function (event, slick, currentSlide) {
+    cSlide.text(currentSlide + 1);
   });
 
 });

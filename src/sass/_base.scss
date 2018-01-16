@@ -22,6 +22,7 @@ body {
 
   @include max-w($screen-xl){
     overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 
