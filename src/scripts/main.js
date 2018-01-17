@@ -205,11 +205,9 @@ $(document).ready(function () {
     signUpFormShow: function () {
       if($(this).hasClass('show')){
         $(this).removeClass('show');
-        menu.hiddenText.slideDown();
         menu.signUpForm.slideUp();
       }else{
         $(this).addClass('show');
-        menu.hiddenText.slideUp();
         menu.signUpForm.slideDown();
       }
     },

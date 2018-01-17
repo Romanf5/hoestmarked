@@ -155,7 +155,7 @@
 }
 
 .pre-form-text {
-  color: #5e6656;
+  color: #a1ac96;
   font-size: 17px;
   font-family: $bold-font;
   margin-bottom: 22px;
@@ -167,6 +167,8 @@
 
 .sign-up-form{
   display: none;
+  max-width: 336px;
+  width: 100%;
 
   @include max-w($screen-sm-start){
     padding-left: 15px;
@@ -174,11 +176,11 @@
   }
 
   input[type='email']{
-    border: 2px solid #5e6656;
-    color: #5e6656;
+    border: 2px solid #a1ac96;
+    color: #a1ac96;
     font-family: $bold-font;
     &::placeholder{
-      color: #5e6656;
+      color: #a1ac96;
       font-family: $bold-font;
     }
   }
