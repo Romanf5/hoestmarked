@@ -15,50 +15,49 @@
   border: 2px solid transparent;
   transition: 0.5s;
 
-  @include max-w($screen-xxl){
+  @include max-w($screen-xxl) {
     padding: 18px;
     font-size: 18px;
   }
 
-  @include max-w($screen-xl){
+  @include max-w($screen-xl) {
     font-size: 16px;
     padding: 10px;
   }
 
-  &:hover{
+  &:hover {
     background-color: #779027;
     border-color: $main-color;
     color: $main-color;
   }
 
-  &--section-info{
+  &--section-info {
     transform: translateX(-25px);
 
-    @include max-w($screen-sm){
+    @include max-w($screen-sm) {
       transform: translateX(0);
     }
 
-
-    &:hover{
+    &:hover {
       background-color: $main-color;
       color: $info-section-title-color;
       border-color: $info-section-title-color;
     }
   }
 
-  &--find-section{
+  &--find-section {
     background-color: $find-section-color;
     padding-left: 30px;
     padding-right: 30px;
 
-    &:hover{
+    &:hover {
       background-color: $main-color;
       border-color: $find-section-color;
       color: $find-section-color;
     }
   }
 
-  &--slider-section{
+  &--slider-section {
     background-color: $slider-section-btn;
     display: block;
     width: 277px;
@@ -66,66 +65,92 @@
     padding-right: 0;
     text-align: center;
 
-    @include max-w($screen-xxl){
+    @include max-w($screen-xxl) {
       width: 240px;
     }
 
-    &:hover{
+    &:hover {
       background-color: $main-color;
       border-color: $slider-section-btn;
       color: $slider-section-btn;
     }
 
-    &:first-of-type{
+    &:first-of-type {
       margin-bottom: 20px;
     }
 
-    &:last-of-type{
+    &:last-of-type {
       width: 260px;
       transform: translateX(50px);
 
-      @include max-w($screen-xxl){
+      @include max-w($screen-xxl) {
         width: 230px;
       }
 
     }
   }
 
-  &--ecology-section{
+  &--ecology-section {
 
   }
 
-  &--market-section{
+  &--market-section {
     background-color: $market-decor-color;
-    
-    &:hover{
+
+    &:hover {
       background-color: #a2742b;
     }
   }
 
-  &--section-intro{
+  &--section-intro {
     background-color: #a1ac96;
     padding: 23px 27px;
   }
 
-  &--eat-section{
+  &--eat-section {
     display: block;
 
-    &:first-of-type{
+    &:first-of-type {
       width: 227px;
       margin-top: 30px;
     }
 
-    &:last-of-type{
+    &:last-of-type {
       width: 156px;
       margin-top: 20px;
       transform: translateX(28px);
     }
   }
+
+  &--section-live {
+    background-color: #737d69;
+
+    &:hover {
+      background-color: $main-color;
+      color: #737d69;
+      border-color: #737d69;
+    }
+  }
+
+  &--other{
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: #a2742b;
+
+    &:hover {
+      background-color: $main-color;
+      color: #a2742b;
+      border-color: #a2742b;
+    }
+  }
 }
 
-.btn-scroll-down{
+.btn-scroll-down {
   display: inline-block;
   margin-top: 61px;
   opacity: 0;
+}
+
+.btn-group {
+  text-align: center;
 }
