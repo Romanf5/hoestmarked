@@ -76,6 +76,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 121px;
   height: 40px;
 }
+.icon-list-icon {
+  background-image: url(../images/spritesheet.png);
+  background-position: -95px -111px;
+  width: 13px;
+  height: 10px;
+}
 .icon-map-icon {
   background-image: url(../images/spritesheet.png);
   background-position: -123px -40px;

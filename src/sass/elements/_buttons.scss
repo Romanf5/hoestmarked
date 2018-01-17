@@ -107,6 +107,21 @@
     background-color: #a1ac96;
     padding: 23px 27px;
   }
+
+  &--eat-section{
+    display: block;
+
+    &:first-of-type{
+      width: 227px;
+      margin-top: 30px;
+    }
+
+    &:last-of-type{
+      width: 156px;
+      margin-top: 20px;
+      transform: translateX(28px);
+    }
+  }
 }
 
 .btn-scroll-down{
