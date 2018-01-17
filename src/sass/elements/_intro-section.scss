@@ -15,6 +15,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    &--top{
+      background-image: url('../images/top-bg.png');
+    }
+
     .section-img-l-board,
     .section-img-r-board,
     .section-img-t-board,
@@ -36,6 +40,11 @@
     top: 40%;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+
+    &--top{
+      padding-bottom: 40px;
+    }
 
     .section-title {
       margin-bottom: 15px;
@@ -46,6 +55,11 @@
       line-height: 25px;
       max-width: 840px;
       margin: 0 auto 110px;
+
+      &--sm-width{
+        max-width: 560px;
+        margin-bottom: 40px;
+      }
     }
 
     .title-info-content {
@@ -56,12 +70,25 @@
       margin-bottom: 50px;
     }
   }
+
+  .btn-intro-wrp{
+    margin-bottom: 50px;
+  }
 }
 
 .intro-content {
   max-width: 670px;
   margin: 0 auto;
   color: #a1ac96;
+
+  &--lg-width{
+    max-width: 845px;
+    color: $main-color;
+  }
+
+  &__item{
+    max-width: 205px;
+  }
 
   &__position {
     margin-bottom: 25px;
@@ -71,4 +98,26 @@
     display: block;
     color: #a1ac96;
   }
+
+  .icon-wrp{
+    min-height: 55px;
+  }
+
+  .content-title {
+    font-family: $bold-font;
+    font-size: 27px;
+    margin-bottom: 15px;
+  }
+
+  .content-text{
+    font-size: 14px;
+  }
+
+  .site-link{
+    color: #40453b;
+    font-family: $bold-font;
+    font-size: 16px;
+    text-decoration: underline;
+  }
 }
+
