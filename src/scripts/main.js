@@ -196,6 +196,21 @@ $(document).ready(function () {
     menuLogo: $('.menu-logo'),
     menu: $('.menu'),
     openIconClass: 'icon-close',
+    signUpBtn: $('#sign-up'),
+    signUpForm: $('.sign-up-form'),
+    hiddenText: $('#text-hidden'),
+
+    signUpFormShow: function () {
+      if($(this).hasClass('show')){
+        $(this).removeClass('show');
+        menu.hiddenText.slideDown();
+        menu.signUpForm.slideUp();
+      }else{
+        $(this).addClass('show');
+        menu.hiddenText.slideUp();
+        menu.signUpForm.slideDown();
+      }
+    },
 
     slideMenu: function () {
       var self = this;
@@ -346,6 +361,9 @@ $(document).ready(function () {
         $(this).removeClass('icon-close');
         menu.hiddenMenu();
         body.removeClass('blocked');
+        menu.signUpBtn.removeClass('show');
+        menu.hiddenText.slideDown();
+        menu.signUpForm.slideUp();
       } else {
         $(this).addClass('icon-close').prop('disabled', true);
         body.addClass('blocked');
@@ -357,6 +375,7 @@ $(document).ready(function () {
 
     init: function () {
       this.menuBtn.on('click', this.clickBtn);
+      this.signUpBtn.on('click', this.signUpFormShow)
     }
   };
 
@@ -468,7 +487,7 @@ $(document).ready(function () {
       duration: durationInfoImg,
       offset: -350
     }).setTween(InfoImg)
-      .addIndicators()
+      /*.addIndicators()*/
       .addTo(controller);
 
     var s2 = new ScrollMagic.Scene({
@@ -476,7 +495,7 @@ $(document).ready(function () {
       duration: 1250,
       offset: -350
     }).setTween(InfoText)
-      .addIndicators()
+     /* .addIndicators()*/
       .addTo(controller);
 
     var s3 = new ScrollMagic.Scene({
@@ -484,7 +503,7 @@ $(document).ready(function () {
       duration: 1000,
       offset: -15
     }).setTween(timelineImgText)
-      .addIndicators({name: 'Find img'})
+     /* .addIndicators({name: 'Find img'})*/
       .addTo(controller);
 
     var s4 = new ScrollMagic.Scene({
@@ -492,7 +511,7 @@ $(document).ready(function () {
       duration: 400,
       offset: 300
     }).setTween(mapText)
-      .addIndicators({name: "Map Text"})
+      /*.addIndicators({name: "Map Text"})*/
       .addTo(controller);
 
     var s5 = new ScrollMagic.Scene({
@@ -500,7 +519,7 @@ $(document).ready(function () {
       duration: 490,
       offset: -200
     }).setTween(timeLineSliderOverlay)
-      .addIndicators({name: "Slider"})
+      /*.addIndicators({name: "Slider"})*/
       .addTo(controller);
 
 
@@ -516,7 +535,7 @@ $(document).ready(function () {
       duration: 80,
       offset: offsetControlSlider
     }).setTween(sliderControl)
-      .addIndicators({name: "Slider Control"})
+     /* .addIndicators({name: "Slider Control"})*/
       .addTo(controller);
 
     var s6 = new ScrollMagic.Scene({
@@ -524,7 +543,7 @@ $(document).ready(function () {
       duration: 1800,
       offset: 290
     }).setTween(boy)
-      .addIndicators({name: "boy"})
+     /* .addIndicators({name: "boy"})*/
       .addTo(controller);
 
 
@@ -540,7 +559,7 @@ $(document).ready(function () {
       duration: 1200,
       offset: offsetTextSlider
     }).setTween(sliderText)
-      .addIndicators({name: "Text"})
+      /*.addIndicators({name: "Text"})*/
       .addTo(controller);
 
     var s8 = new ScrollMagic.Scene({
@@ -548,7 +567,7 @@ $(document).ready(function () {
       duration: 1200,
       offset: -250
     }).setTween(ekologyTimeLine)
-      .addIndicators({name: "Ecology"})
+      /*.addIndicators({name: "Ecology"})*/
       .addTo(controller);
 
     var s9 = new ScrollMagic.Scene({
@@ -556,7 +575,7 @@ $(document).ready(function () {
       duration: 1000,
       offset: -270
     }).setTween(marketImg)
-      .addIndicators({name: "marketOverlay"})
+      /*.addIndicators({name: "marketOverlay"})*/
       .addTo(controller);
 
     var s11 = new ScrollMagic.Scene({
@@ -564,7 +583,7 @@ $(document).ready(function () {
       duration: 1000,
       offset: 0
     }).setTween(marketText)
-      .addIndicators({name: "marketText"})
+      /*.addIndicators({name: "marketText"})*/
       .addTo(controller);
 
     var s12 = new ScrollMagic.Scene({
@@ -572,7 +591,7 @@ $(document).ready(function () {
       duration: 500,
       offset: 0
     }).setTween(contactImgOwerlay)
-      .addIndicators({name: "contactO"})
+      /*.addIndicators({name: "contactO"})*/
       .addTo(controller);
 
     var s13 = new ScrollMagic.Scene({
@@ -580,7 +599,7 @@ $(document).ready(function () {
       duration: 500,
       offset: 200
     }).setTween(contactText)
-      .addIndicators({name: "contactT"})
+      /*.addIndicators({name: "contactT"})*/
       .addTo(controller);
 
     var s14 = new ScrollMagic.Scene({
@@ -588,7 +607,7 @@ $(document).ready(function () {
       duration: 700,
       offset: 250
     }).setTween(contactImgText)
-      .addIndicators({name: "contactIT"})
+      /*.addIndicators({name: "contactIT"})*/
       .addTo(controller);
   }
   /* /Animation Home page*/

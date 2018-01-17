@@ -39,6 +39,7 @@
 }
 
 .menu-logo {
+  display: block;
   max-width: 189px;
   margin: 0 auto 85px;
   opacity: 0;
@@ -150,5 +151,35 @@
 
   &:last-of-type{
     margin-bottom: 0;
+  }
+}
+
+.pre-form-text {
+  color: #5e6656;
+  font-size: 17px;
+  font-family: $bold-font;
+  margin-bottom: 22px;
+  @include max-w($screen-sm-start){
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+.sign-up-form{
+  display: none;
+
+  @include max-w($screen-sm-start){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  input[type='email']{
+    border: 2px solid #5e6656;
+    color: #5e6656;
+    font-family: $bold-font;
+    &::placeholder{
+      color: #5e6656;
+      font-family: $bold-font;
+    }
   }
 }
