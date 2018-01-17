@@ -5,6 +5,7 @@ $(document).ready(function () {
     headerLine: $('#scroll-line'),
     headerLineText: $('#scroll-line-text'),
     marker: true,
+    marker2: false,
     lineShow: function (element) {
       $.Velocity.animate(element,
         {
@@ -21,7 +22,9 @@ $(document).ready(function () {
       $.Velocity.animate(this.headerLineText, "transition.fadeIn",
         {
           duration: 300
-        })
+        }).then(function () {
+        headerLineAnimation.marker2 = true;
+      })
     },
     textHidden: function (delay) {
       $.Velocity.animate(this.headerLineText, {opacity: 0},
@@ -43,19 +46,18 @@ $(document).ready(function () {
         }, {
           duration: delayTime,
           easing: [0.05, 0.78, 1, 1]
-        });
+        }).then(function () {
+        headerLineAnimation.marker = true;
+      })
     },
     scroll: function (element) {
       $(window).on('scroll', function () {
-        if ($(window).scrollTop() > 0) {
-          if (headerLineAnimation.marker) {
+        if ($(window).scrollTop() > 0 && headerLineAnimation.marker) {
             headerLineAnimation.lineShow(element);
             headerLineAnimation.marker = false;
-          }
-        } else if ($(window).scrollTop() === 0) {
-          headerLineAnimation.marker = true;
-          done = false;
+        } else if ($(window).scrollTop() === 0 && !headerLineAnimation.marker && headerLineAnimation.marker2) {
           headerLineAnimation.textHidden();
+
         }
       })
     }
