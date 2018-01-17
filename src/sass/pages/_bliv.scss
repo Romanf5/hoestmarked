@@ -1,0 +1,41 @@
+.form{
+  &__text{
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .section-title{
+      color: #737d69;
+      max-width: 723px;
+      font-size: 59px;
+      line-height: 53.24px;
+      margin: 0 auto 25px;
+
+      span{
+        display: block;
+
+        &:first-of-type{
+          padding-left: 145px;
+        }
+
+        &:last-of-type{
+          padding-left: 70px;
+        }
+      }
+    }
+
+    .section-text{
+      color: #5e6656;
+      padding-bottom: 50px;
+
+      p{
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      h3{
+        font-size: 21px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
