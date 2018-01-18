@@ -120,6 +120,11 @@
     font-family: $title-font;
     font-size: 30px;
     line-height: 35px;
+    color: #a1ac96;
+
+    &:hover{
+      color: #a1ac96;
+    }
 
     @include max-w($screen-xl){
       font-size: 25px;
@@ -184,4 +189,8 @@
       font-family: $bold-font;
     }
   }
+}
+
+#sign-up{
+  cursor: pointer;
 }

@@ -175,6 +175,7 @@
     background-color: #779027;
     padding-top: 90px;
     padding-bottom: 100px;
+    z-index: 100;
 
     @include max-w($screen-xxl){
       right: -300px;
