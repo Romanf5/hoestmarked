@@ -105,6 +105,10 @@
   &--section-intro {
     background-color: #a1ac96;
     padding: 23px 27px;
+
+    @include max-w($screen-sm){
+      margin-bottom: 20px;
+    }
   }
 
   &--eat-section {

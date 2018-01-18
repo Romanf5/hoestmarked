@@ -1,10 +1,21 @@
 .intro {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+
+  @include max-w($screen-xxxl){
+    padding-bottom: 1000px;
+  }
+
+  @include max-w($screen-sm-start){
+    padding-bottom: 1350px;
+  }
 
   &__banner {
     padding: 30px;
+
+    @include max-w($screen-sm-start){
+      padding: 0;
+    }
   }
 
   &__bg {
@@ -41,6 +52,16 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+
+
+    @include max-w($screen-sm-start){
+      max-width: 708px;
+      top: 28%;
+    }
+
+    @include max-w($screen-sm){
+      top: 14%;
+    }
 
     &--top{
       padding-bottom: 40px;
@@ -81,13 +102,31 @@
   margin: 0 auto;
   color: #a1ac96;
 
+  @include max-w($screen-sm-start){
+    flex-direction: column;
+    align-items: center;
+  }
+
   &--lg-width{
     max-width: 845px;
     color: $main-color;
+
+    @include max-w($screen-sm-start){
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item{
     max-width: 205px;
+
+    @include max-w($screen-sm-start){
+      margin-bottom: 25px;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__position {
