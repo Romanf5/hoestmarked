@@ -23,6 +23,7 @@
     @include max-w($screen-xxxl){
       max-width: 825px;
       flex-shrink: 2;
+      margin-right: 120px;
     }
 
     @include max-w($screen-xxl) {
@@ -125,6 +126,11 @@
 
     @include max-w($screen-xxxl){
       max-width: 880px;
+      margin-left: 190px;
+    }
+
+    @include max-w($screen-xl){
+      max-width: 700px;
       margin-left: 50px;
     }
 
