@@ -34,6 +34,10 @@
       background-image: url('../images/godt-bg.png');
     }
 
+    &--tool{
+      background-image: url('../images/tool-bg.png');
+    }
+
     .section-img-l-board,
     .section-img-r-board,
     .section-img-t-board,
@@ -72,6 +76,19 @@
 
     &--godt{
       background-color: rgba(119, 144, 39, 0.8);
+      padding-bottom: 60px ;
+    }
+
+    &--tool{
+      background-color: rgba(162, 116, 43, 0.8);
+
+      .section-title{
+
+        span{
+          display: block;
+          padding-left: 55px;
+        }
+      }
     }
 
     .section-title {
@@ -129,6 +146,11 @@
     }
   }
 
+  &--xs-width{
+    max-width: 570px;
+    color: $main-color;
+  }
+
 
   &__item{
     max-width: 205px;
@@ -139,6 +161,10 @@
       &:last-of-type{
         margin-bottom: 0;
       }
+    }
+
+    &--tool{
+      max-width: 245px;
     }
   }
 
@@ -168,6 +194,10 @@
 
   .content-text{
     font-size: 14px;
+
+    .contact-data{
+      margin-top: 30px;
+    }
   }
 
   .site-link{
