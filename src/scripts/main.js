@@ -379,6 +379,13 @@ $(document).ready(function () {
     }
   };
 
+
+  $(".btn-scroll-down").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#section-info").offset().top
+    }, 2000);
+  });
+
   /*Scroll */
   var $window = $(window);
   var scrollTime = 0.4;
