@@ -15,6 +15,7 @@ $(document).ready(function () {
           delay: 200,
           easing: [0.05, 0.78, 1, 1],
         }).then(function () {
+          headerLineAnimation.headerLineText.css('display','inline-block');
         headerLineAnimation.textShow();
       });
     },
@@ -31,6 +32,7 @@ $(document).ready(function () {
         {
           duration: 300,
         }).then(function () {
+          headerLineAnimation.headerLineText.css('display','none');
         headerLineAnimation.lineHidden(headerLineAnimation.headerLine, delay);
       })
     },
@@ -357,15 +359,15 @@ $(document).ready(function () {
     },
 
     clickBtn: function () {
-      if ($(this).hasClass('icon-close')) {
-        $(this).removeClass('icon-close');
+      if ($(this).hasClass('icon-closes')) {
+        $(this).removeClass('icon-closes');
         menu.hiddenMenu();
         body.removeClass('blocked');
         menu.signUpBtn.removeClass('show');
         menu.hiddenText.slideDown();
         menu.signUpForm.slideUp();
       } else {
-        $(this).addClass('icon-close').prop('disabled', true);
+        $(this).addClass('icon-closes').prop('disabled', true);
         body.addClass('blocked');
         heroSection.minScale();
         headerLineAnimation.textHidden(100);
@@ -374,7 +376,7 @@ $(document).ready(function () {
     },
 
     init: function () {
-      this.menuBtn.on('click', this.clickBtn);
+      this.menuBtn.on('click',this.clickBtn);
       this.signUpBtn.on('click', this.signUpFormShow)
     }
   };
