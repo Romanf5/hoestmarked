@@ -50,6 +50,10 @@
   bottom: 70px;
   left: 73px;
 
+  svg{
+    fill: $main-color;
+  }
+
   @include max-w($screen-sm) {
     bottom: 30px;
     left: 30px;
