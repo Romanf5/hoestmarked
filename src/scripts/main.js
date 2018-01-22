@@ -642,29 +642,33 @@ $(document).ready(function () {
   }
   /*Slider Home page*/
 
-  /*var video = {
-    videoItem:,
-  /!*  videoDuration: this.videoItem.duration*!/
-  };*/
+  var markerTime = true;
 
-  $("#bgvid").on("play", function () {
-    timeVideo = Math.round(this.duration * 1000);
+  $("#bgvid").on("timeupdate", function () {
+    var timeVideo = Math.round(this.duration * 1000);
+    var cTime = Math.floor(this.currentTime);
+    console.log(cTime);
+    if (cTime === 0 && markerTime) {
+      markerTime = false;
+      bar(timeVideo);
+    }
 
+  });
+
+  function bar(duration) {
     var bar = new ProgressBar.Circle(time_line, {
       strokeWidth: 50,
       easing: 'linear',
-      duration: timeVideo,
+      duration: duration,
       color: '#FFF',
-      trailColor: '#eee',
-      trailWidth: 1,
       svgStyle: null
     });
 
-     bar.animate(1.0);
-  });
-
-
-
+    bar.animate(1, function () {
+      bar.destroy();
+      markerTime = true;
+    });
+  }
 
   /*Main Init*/
   heroSection.bannerShow();
