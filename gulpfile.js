@@ -69,6 +69,12 @@ gulp.task('copy:fonts', function() {
     .pipe(gulp.dest(distPath + 'fonts'));
 });
 
+gulp.task('copy:video', function() {
+  return gulp.src(srcPath + 'video/**/*.{mp4,webm}')
+    .pipe(newer(distPath + 'video'))
+    .pipe(gulp.dest(distPath + 'video'));
+});
+
 gulp.task('copy:php', function() {
   return gulp.src(srcPath + '**/*.php')
     .pipe(newer(distPath))
@@ -208,7 +214,7 @@ gulp.task('replace-path', function() {
 gulp.task('build-dev', function(callback) {
   gulpSequence(
     'clean',
-    ['style', 'copy:scripts', 'copy:images', 'copy:fonts', 'copy:php', 'concat:scripts', 'concat:styles'],
+    ['style', 'copy:scripts', 'copy:images', 'copy:fonts', 'copy:php','copy:video', 'concat:scripts', 'concat:styles'],
     'html',
     callback
   );
@@ -217,7 +223,7 @@ gulp.task('build-dev', function(callback) {
 gulp.task('build', function(callback) {
   gulpSequence(
     'clean',
-    ['style-build', 'copy:scripts', 'copy:images', 'copy:fonts', 'copy:php', 'concat:scripts', 'concat:styles'],
+    ['style-build', 'copy:scripts', 'copy:images', 'copy:fonts', 'copy:php','copy:video', 'concat:scripts', 'concat:styles'],
     ['minify:css', 'minify:scripts', 'optimize-images'],
     'html',
     'replace-path',
@@ -246,6 +252,7 @@ gulp.task('serve', ['build-dev'], function() {
   gulp.watch('scripts/*.{js,json}', {cwd: srcPath}, ['watch:scripts']);
   gulp.watch('images/**/*.{jpg,jpeg,gif,png,svg}', {cwd: srcPath}, ['watch:images']);
   gulp.watch('fonts/**/*.{ttf,woff,woff2,eot,svg}', {cwd: srcPath}, ['watch:fonts']);
+  gulp.watch('video/**/*.{mp4,webm}', {cwd: srcPath}, ['watch:video']);
   gulp.watch('**/*.php', {cwd: srcPath}, ['watch:php']);
   gulp.watch([
     '*.html',
@@ -257,6 +264,7 @@ gulp.task('watch:scripts', ['copy:scripts'], reload);
 gulp.task('watch:images', ['copy:images'], reload);
 gulp.task('watch:fonts', ['copy:fonts'], reload);
 gulp.task('watch:php', ['copy:php'], reload);
+gulp.task('watch:video', ['copy:video'], reload);
 gulp.task('watch:html', ['html'], reload);
 
 

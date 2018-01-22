@@ -188,7 +188,7 @@ $(document).ready(function () {
         duration: 300,
         delay: 500
       });
-    }
+    },
   };
   var menu = {
     menuBtn: $('.menu-btn-wrap'),
@@ -379,8 +379,7 @@ $(document).ready(function () {
     }
   };
 
-
-  $(".btn-scroll-down").click(function() {
+  heroSection.downArrow.click(function() {
     $('html, body').animate({
       scrollTop: $("#section-info").offset().top
     }, 2000);
@@ -621,6 +620,7 @@ $(document).ready(function () {
 
   /*Slider Home page*/
   if ($('body').hasClass('home-page')) {
+
     /*Slider*/
     var slick = $("#slider").slick({
       appendArrows: $('.slider-control'),
