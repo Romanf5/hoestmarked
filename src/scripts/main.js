@@ -379,9 +379,11 @@ $(document).ready(function () {
     }
   };
 
+
+  var heightHeader = $('.page-header').height();
   heroSection.downArrow.click(function () {
     $('html, body').animate({
-      scrollTop: $("#section-info").offset().top
+      scrollTop: $("#section-info").offset().top-heightHeader
     }, 2000);
   });
 
@@ -642,12 +644,11 @@ $(document).ready(function () {
   }
   /*Slider Home page*/
 
-  var markerTime = true;
+var markerTime = true;
 
   $("#bgvid").on("timeupdate", function () {
     var timeVideo = Math.round(this.duration * 1000);
     var cTime = Math.floor(this.currentTime);
-    console.log(cTime);
     if (cTime === 0 && markerTime) {
       markerTime = false;
       bar(timeVideo);
