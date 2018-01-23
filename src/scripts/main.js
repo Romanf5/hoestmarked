@@ -15,7 +15,7 @@ $(document).ready(function () {
           delay: 200,
           easing: [0.05, 0.78, 1, 1],
         }).then(function () {
-          headerLineAnimation.headerLineText.css('display','inline-block');
+        headerLineAnimation.headerLineText.css('display', 'inline-block');
         headerLineAnimation.textShow();
       });
     },
@@ -32,7 +32,7 @@ $(document).ready(function () {
         {
           duration: 300,
         }).then(function () {
-          headerLineAnimation.headerLineText.css('display','none');
+        headerLineAnimation.headerLineText.css('display', 'none');
         headerLineAnimation.lineHidden(headerLineAnimation.headerLine, delay);
       })
     },
@@ -221,11 +221,8 @@ $(document).ready(function () {
       }, {
         easing: 'linear',
         delay: 300,
-        progress: function (elements, complite) {
-          if (complite === 1) {
-            menu.slideLeftPart();
-          }
-        }
+      }).then(function () {
+        menu.slideLeftPart();
       })
     },
 
@@ -244,12 +241,9 @@ $(document).ready(function () {
               $('.map-btn-wrp').addClass('trans-bg');
             }
           }
-
-          if (Math.floor(complite * 100) === 70) {
-            menu.showMenuLogo();
-          }
         }
       }).then(function () {
+        menu.showMenuLogo();
         menu.showLeftContent();
         menu.showRightContent();
       })
@@ -376,7 +370,7 @@ $(document).ready(function () {
     },
 
     init: function () {
-      this.menuBtn.on('click',this.clickBtn);
+      this.menuBtn.on('click', this.clickBtn);
       this.signUpBtn.on('click', this.signUpFormShow)
     }
   };
@@ -385,7 +379,7 @@ $(document).ready(function () {
   var heightHeader = $('.page-header').height();
   heroSection.downArrow.click(function () {
     $('html, body').animate({
-      scrollTop: $("#section-info").offset().top-heightHeader
+      scrollTop: $("#section-info").offset().top - heightHeader
     }, 2000);
   });
 
@@ -397,7 +391,7 @@ $(document).ready(function () {
   if (width > 1024) {
     $('body').on("mousewheel DOMMouseScroll", function (event) {
 
-      if (!menu.menuBtn.hasClass('icon-close')) {
+      if (!menu.menuBtn.hasClass('icon-closes')) {
 
         event.preventDefault();
 
@@ -646,7 +640,7 @@ $(document).ready(function () {
   }
   /*Slider Home page*/
 
-var markerTime = true;
+  var markerTime = true;
 
   $("#bgvid").on("timeupdate", function () {
     var timeVideo = Math.round(this.duration * 1000);
